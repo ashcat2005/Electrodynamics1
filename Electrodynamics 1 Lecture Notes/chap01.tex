@@ -1,0 +1,193 @@
+\chapter{Maxwell Equations}
+
+\section{Lorentz Force}
+The force acting on a particle with electric charge $q$ moving with velocity $\textbf{v} $ due to its interaction with electric and magnetic fields, $\textbf{E}$ and $\textbf{B}$, is given by the expression
+\begin{equation}
+\textbf{F} = q \left( \textbf{E} +\textbf{v} \times \textbf{B} \right). 
+\label{eq:LorentzForce}
+\end{equation}
+
+\subsection{Electric Charge}
+The electric charge is measured in the units called \textit{Coulomb} and the fundamental charge corresponds to that of an electron. Its value is
+\begin{equation}
+ e = 1.602177 \times 10^{-19} \textit{ C}.
+ \end{equation} 
+ 
+The electric charge satisfies a superposition principle, so a set of $n$ discrete point charges give a total electric charge given by
+\begin{equation}
+Q = \sum_{i=1}^n q_i.
+\end{equation}
+
+Similarly, a continuous distribution of electric charge represented by a density function $\rho = \rho(t,\textbf{r})$ over a volume $V$, gives a total charge 
+\begin{equation}
+Q = \int_V \rho(t,\textbf{r}) d^3r
+\end{equation}
+
+\subsection{Dirac Delta Function}
+In one dimension, the Dirac delta function has the properties:
+\begin{enumerate}
+\item $\delta(x-a) = 0 $ for $x \neq a$
+\item $\int \delta(x-a) dx = 1 $ if the region of integration includes $x=a$ and is zero otherwise.
+\item $\int f(x) \delta(x-a) dx = f(a)$
+\item $\int f(x) \delta ' (x-a) dx = - f'(a)$, where prime denotes derivative with respect to the argument.
+\item $\delta (f(x)) = \sum_i \frac{1}{\left| \frac{df}{dx} (x_i)\right|} \delta (x-x_i) $ where $f(x)$ is assumed to have only simple zeros, located at $x=x_i$.
+\item $ \delta (ax) = \frac{1}{\left| a \right|} \delta (x)$
+\item $x\delta(x) = 0$
+\item $\delta \left( x^2 - e^2 \right) = \frac{1}{2 \left| e \right| } \left[ \delta(x+e) + \delta(x-e) \right] $
+
+\item $\delta (\textbf{r} - \textbf{R}) = \delta(x-X) \delta(y-Y) \delta(z-Z)$
+\item $\int f(x) \nabla \delta (\textbf{r} - \textbf{r}_0) d^3x = - \left. \nabla f \right|_{\textbf{r} = \textbf{r}_0} $
+\item $ \delta(\textbf{r} - \textbf{r}_0) = \delta(\textbf{r}_0 - \textbf{r})$
+\end{enumerate}
+
+
+\textbf{Example}\\
+For $n$ point charges $q_i$ moving along the trajectories $\textbf{r}_i (t)$, the charge density may be written in terms of the Dirac delta function (see Appendix A) as
+\begin{equation}
+\rho (t,\textbf{r}) = \sum_{i=1}^n q_i \delta\left( \textbf{r} - \textbf{r}_i (t) \right) \label{eq:nPointDensity}
+\end{equation}
+
+\subsection{Electric Current}
+Electric charge in organized motion is called  \textit{electric current} and it is defined as
+\begin{equation}
+I = \frac{dQ}{dt}
+\end{equation}
+and it is measured in units of  \textit{Coulomb per second}  known as \textit{Ampere}. The electric current can be written also as
+\begin{equation}
+I = \int \textbf{j} \cdot \textbf{dS}
+\end{equation}
+where $\textbf{j}$ is the electric current density (current per unit area) and $\textbf{dS} = \hat{ \textbf{n}} dS$ represents a surface element vector across  which charge is moving.
+
+\subsection{Electric Charge Conservation and the Equation of Continuity}
+Consider a region of space with volume $V$ and some amount of electric charge. If this charge moves away from this region, it will produce an electric current given by
+\begin{equation}
+I = -\frac{dQ}{dt},
+\end{equation}
+where the minus sign indicates that the charge in that region is decreasing (charge conservation). Introducing a current density, this can be written as
+\begin{equation}
+ \oint \textbf{j} \cdot \textbf{dS} = -\frac{dQ}{dt},
+\end{equation}
+where the integration is considered over all the closed surface surrounding the volume in which the charge is located. This integral corresponds to the flux of electric charge across the closed surface. Now, using the concept of charge density we have 
+\begin{eqnarray}
+ \oint \textbf{j} \cdot \textbf{dS} &=& -\frac{d}{dt} \int_V \rho d^3r \\
+ \oint \textbf{j} \cdot \textbf{dS} &=& - \int_V\frac{\partial \rho}{\partial t} d^3r
+\end{eqnarray}
+Using Gauss' theorem in the integral in the left hand side we transform the surface integral into a volume one,
+\begin{equation}
+ \int_V \boldsymbol{ \nabla} \cdot \textbf{j} d^3r = -\frac{d}{dt} \int_V \rho d^3r,
+\end{equation}
+which gives the final result
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \boldsymbol{\nabla} \cdot \textbf{j} = 0, \label{eq:continuityEquation}
+\end{equation}
+known as the \textit{continuity equation}.\\
+
+\textbf{Example}\\
+Given the density function for a set of $n$ point charges in Eq. (\ref{eq:nPointDensity}) and the particles velocities $\textbf{v} = \dot{\textbf{r}}_i (t) $, we have
+\begin{eqnarray}
+\frac{\partial \rho}{\partial t} &=& \sum_{i=1}^n q_i \frac{\partial}{\partial t} \delta (\textbf{r} - \textbf{r}_i)\\
+\frac{\partial \rho}{\partial t} &=& \sum_{i=1}^n q_i \frac{d \textbf{r}_i}{d t} \cdot \boldsymbol{\nabla}_i \delta (\textbf{r} - \textbf{r}_i)\\
+\frac{\partial \rho}{\partial t} &=& -\sum_{i=1}^n q_i \frac{d \textbf{r}_i}{d t} \cdot \boldsymbol{\nabla} \delta (\textbf{r} - \textbf{r}_i)\\
+\frac{\partial \rho}{\partial t} &=& -\sum_{i=1}^n q_i \textbf{v}_i \cdot \boldsymbol{\nabla} \delta (\textbf{r} - \textbf{r}_i),
+\end{eqnarray}
+where the minus sign in the third line comes from the derivative properties of the delta function. Since $\boldsymbol{\nabla} \cdot \textbf{v}_i = 0 $, we write
+\begin{equation}
+\frac{\partial \rho}{\partial t}=-  \boldsymbol{\nabla} \cdot \sum_{i=1}^n q_i \textbf{v}_i  \delta (\textbf{r} - \textbf{r}_i).
+\end{equation}
+Comparison with the continuity equation (\ref{eq:continuityEquation}) let us identify the corresponding density current as 
+\begin{equation}
+\textbf{j} (t,\textbf{r}) = \sum_{i=1}^n q_i \textbf{v}_i  \delta (\textbf{r} - \textbf{r}_i).
+\end{equation}
+
+
+\subsection{Electric and Magnetic Fields}
+From Lorentz force (\ref{eq:LorentzForce}) we identify the electric and magnetic fields,
+\begin{eqnarray}
+\textbf{E} &=& \textbf{E}(t,\textbf{r})\\
+\textbf{B} &=& \textbf{B}(t,\textbf{r}).
+\end{eqnarray}
+
+The electric field is measured in units of \textit{Newtons per Coulomb}, $\textit{N}/\textit{C}$ while the magnetic field is measured in the units $\frac{\textit{N}}{\textit{C} \textit{m/s}} = \frac{\textit{N}}{\textit{A m} } = T$ known as \textit{Tesla}.
+Electric fields are known to work up to distances $\sim 10^5 \textit{m}$ (atmospheric electrostatic discharges) while magnetic fields have been observed in distances $\sim 10^{20} \textit{m} $ (cosmic magnetic fields).
+
+
+\section{Maxwell Equations}
+
+The description and evolution of  electric and magnetic fields in vacuum is given by Maxwell equations,
+
+\begin{eqnarray}
+\boldsymbol{\nabla} \cdot \textbf{E} &=& \frac{\rho}{\epsilon_0} \label{MaxwellEquations01}\\
+\boldsymbol{\nabla} \times \textbf{E} &=& -\frac{\partial \textbf{B}}{\partial t} \label{MaxwellEquations02}\\
+\boldsymbol{\nabla} \cdot \textbf{B} &=& 0 \label{MaxwellEquations03} \\
+\boldsymbol{\nabla} \times \textbf{B} &=& \mu_0 \textbf{j} + \mu_0 \epsilon_0  \frac{\partial \textbf{E}}{\partial t} \label{MaxwellEquations04}
+\end{eqnarray}
+where 
+\begin{equation}
+\epsilon_0 = 8.854 \times 10^{-12} \textit{ F/m}
+\end{equation}
+is called the \textit{permitivity of free space} and 
+\begin{equation}
+\mu_0 = \frac{1}{\epsilon_0 c^2}
+\end{equation}
+is  the \textit{permeability of free space}.
+
+
+\section{Maxwell Equations in Matter}
+
+We introduce the notion of "free" densities of charge and current,
+\begin{eqnarray}
+\rho_f &=& \rho_f (t,\textbf{r})\\
+\textbf{j}_f &=& \textbf{j}_f (t,\textbf{r}),
+\end{eqnarray}
+which will produce electric and magnetic fields contributing to the total fields in a given region of space. The \textit{polarization} of a dielectric is characterized by a vector
+\begin{equation}
+\textbf{P} = \textbf{P} (r,\textbf{r})
+\end{equation}
+while the \textit{magnetization} of a magnet is characterized by a vector
+\begin{equation}
+\textbf{M} = \textbf{M} (r,\textbf{r}).
+\end{equation}
+
+In order to incorporate these quantities into Maxwell equations we use the relations
+\begin{equation}
+\rho (t,\textbf{r}) = \rho_f (t,\textbf{r}) - \boldsymbol{\nabla} \cdot \textbf{P} (t,\textbf{r})
+\end{equation}
+and
+\begin{equation}
+\textbf{j} (t,\textbf{r}) = \textbf{j}_f (t,\textbf{r}) + \boldsymbol{\nabla} \times \textbf{M} (t,\textbf{r})  + \frac{\partial \textbf{P} (t,\textbf{r})}{\partial t}.
+\end{equation}
+
+We also define the auxiliary macroscopic fields 
+\begin{equation}
+\textbf{D} (t,\textbf{r}) = \epsilon_0 \textbf{E} (t,\textbf{r}) + \textbf{P} (t,\textbf{r})
+\end{equation}
+and
+\begin{equation}
+\textbf{H} (t,\textbf{r})  = \frac{\textbf{B}(t,\textbf{r})}{\mu_0} - \textbf{M}(t,\textbf{r}).
+\end{equation}
+
+Hence, using these definitions, the first of Maxwell equations (\ref{MaxwellEquations01}) writes
+
+\begin{eqnarray}
+\boldsymbol{\nabla} \cdot \textbf{E} &=& \frac{\rho}{\epsilon_0} \\
+\boldsymbol{\nabla} \cdot \left( \frac{\textbf{D} - \textbf{P} }{\epsilon_0}\right) &=& \frac{\rho_f - \boldsymbol{\nabla} \cdot \textbf{P}}{\epsilon_0} \\
+\boldsymbol{\nabla} \cdot \textbf{D} &=& \rho_f .
+\end{eqnarray}
+
+Similarly, equation (\ref{MaxwellEquations04}) becomes
+
+\begin{eqnarray}
+\boldsymbol{\nabla} \times \textbf{B} &=& \mu_0 \textbf{j} + \mu_0 \epsilon_0  \frac{\partial \textbf{E}}{\partial t} \\
+\mu_0 \boldsymbol{\nabla} \times \left(  \textbf{H} + \textbf{M} \right) &=& \mu_0 \left( \textbf{j}_f (t,\textbf{r}) + \boldsymbol{\nabla} \times \textbf{M} (t,\textbf{r})  + \frac{\partial \textbf{P} (t,\textbf{r})}{\partial t} \right) + \mu_0 \epsilon_0  \frac{\partial \textbf{E}}{\partial t} \notag \\
+\boldsymbol{\nabla} \times \textbf{H} &=&  \textbf{j}_f + \frac{\partial \textbf{D}}{\partial t}
+\end{eqnarray}
+
+
+
+Therefore, we conclude that Maxwell equations in matter are written as 
+\begin{eqnarray}
+\boldsymbol{\nabla} \cdot \textbf{D} &=& \rho_f \\
+\boldsymbol{\nabla} \times \textbf{E} &=& -\frac{\partial \textbf{B}}{\partial t} \\
+\boldsymbol{\nabla} \cdot \textbf{B} &=& 0 \\
+\boldsymbol{\nabla} \times \textbf{H} &=&  \textbf{j}_f + \frac{\partial \textbf{D}}{\partial t}
+\end{eqnarray}

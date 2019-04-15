@@ -1,0 +1,528 @@
+\chapter{Electrostatics}
+
+From Maxwell equations (\ref{MaxwellEquations01} - \ref{MaxwellEquations04}), every time-independent charge distribution $\rho (\textbf{r})$ will produce an electric vector field independent of time, $\textbf{E} (\textbf{r})$, described by the equations
+\begin{equation}
+\boldsymbol{\nabla} \cdot \textbf{E} = \rho \label{Max01}
+\end{equation}
+and
+\begin{equation}
+\boldsymbol{\nabla} \times \textbf{E} = 0. \label{Max02}
+\end{equation}
+
+Given a charge distribution represented by the density $\tilde{\rho} (\textbf{r}) $, the electric field $\textbf{E}(\textbf{r})$ will exert on it a force given by 
+\begin{equation}
+\textbf{F} = \int \tilde{\rho} (\textbf{r}) \textbf{E}(\textbf{r}) d^3 r
+\end{equation}
+and a torque given by
+\begin{equation}
+\textbf{N} = \int \textbf{r} \times \left[ \tilde{\rho} (\textbf{r}) \textbf{E}(\textbf{r}) \right] d^3 r.
+\end{equation}
+
+\section{Helmholtz Theorem}
+
+Helmholtz Theorem guarantees that equations (\ref{Max01}) and (\ref{Max02}) determines the field $\textbf{E} (\textbf{r})$ uniquely. \\
+
+\textbf{Statement of the Theorem}\\
+
+Any arbitrary vector field $\textbf{E}(\textbf{r})$ can always be decomposed into the sum of two vector fields, one with zero divergence and one with zero curl,
+\begin{equation}
+\textbf{E} = \textbf{E}_\bot + \textbf{E}_\| ,
+\end{equation}
+where 
+\begin{eqnarray}
+\boldsymbol{\nabla} \cdot \textbf{E}_\bot &=& 0\\
+\boldsymbol{\nabla} \times \textbf{E}_\| &=& 0
+\end{eqnarray}
+
+\section{Scalar Potential}
+
+Equation (\ref{Max02}) states that the electrostatic field is conservative, so that it can be derived from  the gradient of some scalar function (because the curl of any well-behaved scalar function vanishes). This function is called the \textit{scalar potential} and hence
+\begin{equation}
+\textbf{E} = - \boldsymbol{\nabla} \Phi. \label{eq:scalarPotential}
+\end{equation}
+
+
+\section{Poisson and Laplace Equations}
+
+Using the scalar potential defined in Eq. (\ref{eq:scalarPotential}) in Maxwell equation for the electrostatic field, (\ref{Max01}), gives one partial differential for $\Phi (\textbf{r})$ called the \textit{Poisson equation},
+\begin{equation}
+\nabla^2 \Phi = - \frac{\rho}{\epsilon_0}. \label{eq:PoissonEquation}
+\end{equation}
+
+In a region of space with no electric charge, this equation reduces to the \textit{Laplace equation},
+\begin{equation}
+\nabla^2 \Phi = 0. \label{eq:LaplaceEquation}
+\end{equation}
+
+\section{Coulomb Field}
+A particular solution of Maxwell equations is given by  Coulomb's field, which has been experimentally established in the 18th century by Priestley, Cavendish and Coulomb. It is defined by Coulomb's law, which gives the force acting on a charge $q$ due to $n$ point charges $q_i$ located at positions $\textbf{r}_i$,
+\begin{equation}
+\textbf{F} = q \textbf{E},
+\end{equation}
+where 
+\begin{equation}
+\textbf{F} = \frac{1}{4\pi \epsilon_0}  \sum_{i=1}^n q q_i \frac{\textbf{r} - \textbf{r}_i}{\left| \textbf{r} - \textbf{r}_i \right| ^3}.
+\end{equation}
+
+Thus, Coulomb's electrostatic field in vacuum is
+\begin{equation}
+\textbf{E} = \frac{1}{4\pi \epsilon_0}  \sum_{i=1}^n  q_i \frac{\textbf{r} - \textbf{r}_i}{\left| \textbf{r} - \textbf{r}_i \right| ^3},
+\end{equation}
+where the proportionality constant has the value
+\begin{equation}
+k = \frac{1}{4\pi \epsilon_0} = 10^{-7} c^2 .
+\end{equation}
+
+For a general charge density $\rho(\textbf{r}')$ the electrostatic Coulomb's field is 
+\begin{equation}
+\textbf{E} = \frac{1}{4\pi \epsilon_0}  \int  \rho (\textbf{r}') \frac{\textbf{r} - \textbf{r}'}{\left| \textbf{r} - \textbf{r}' \right| ^3} d^3r', \label{eq:CoulombField}
+\end{equation}
+
+
+Since 
+\begin{equation}
+\frac{\textbf{r} - \textbf{r}'}{\left| \textbf{r} - \textbf{r}' \right| ^3}  = - \boldsymbol{\nabla} \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right| }  \right)
+\end{equation}
+we can write Coulomb's field (\ref{eq:CoulombField}) as
+\begin{equation}
+\textbf{E} = - \frac{1}{4\pi \epsilon_0} \boldsymbol{\nabla}  \int   \frac{\rho (\textbf{r}') }{\left| \textbf{r} - \textbf{r}' \right| }  d^3r',
+\end{equation}
+and therefore, the scalar potential for the Coulomb's field is written
+\begin{equation}
+\Phi (\textbf{r}) =  \frac{1}{4\pi \epsilon_0}  \int   \frac{\rho (\textbf{r}') }{\left| \textbf{r} - \textbf{r}' \right| }  d^3r'.
+\label{eq:CoulombPotential}
+\end{equation}
+
+In order to show that this potential is a solution of Poisson equation, consider each term in the integral, $  \frac{1}{\left| \textbf{r} - \textbf{r}' \right| }$, which can be written as $\frac{1}{r}$ by choosing coordinates such that $\textbf{r}' = 0$. In cartesian coordinates we have $\textbf{r}= x^1 \hat{\textbf{n}}_1 + x^2 \hat{\textbf{n}}_2 + x^3 \hat{\textbf{n}}_3 $ and $r = \sqrt{(x^1)^2 + (x^2)^2 + (x^3)^2}$. Therefore, for $\textbf{r} \neq 0 $, 
+
+\begin{equation}
+\frac{\partial r}{\partial x^j} = \frac{\partial }{\partial x^j} \sqrt{(x^1)^2 + (x^2)^2 + (x^3)^2} = \frac{x^j}{r} = n^j
+\end{equation}
+and 
+\begin{equation}
+\frac{\partial n^j }{\partial x^k} = \frac{\partial }{\partial x^k} \left( \frac{x^j}{r}\right) = \frac{\delta_{jk}}{r} -\frac{x^j}{r^2} \frac{\partial r}{\partial x^k} = \frac{1}{r}\left[ \delta_{jk} -n^j n^k \right].
+\end{equation}
+
+These relations let us write the derivative
+\begin{equation}
+\frac{\partial }{\partial x^j} \left( \frac{1}{r} \right) = -\frac{1}{r^2} \frac{\partial r}{\partial x^j} = -\frac{n^j}{r^2}
+\end{equation}
+and the second derivative 
+\begin{eqnarray}
+\frac{\partial^2 }{\partial x^k x^j} \left( \frac{1}{r} \right) &=&   \frac{\partial }{\partial x^k} \left( - \frac{n^j}{r^2} \right) = -\frac{1}{r^2}  \frac{\partial n^j }{\partial x^k} + 2\frac{n^j}{r^3} \frac{\partial r }{\partial x^k} \\
+\frac{\partial^2 }{\partial x^k x^j} \left( \frac{1}{r} \right) &=& -\frac{1}{r^2}  \frac{1}{r}\left[ \delta_{jk} -n^j n^k \right] + 2\frac{n^j}{r^3} n^k \\
+\frac{\partial^2 }{\partial x^k x^j} \left( \frac{1}{r} \right) &=& \frac{1}{r^3} \left[ 3 n^j n^k - \delta_{jk} \right].
+\end{eqnarray}
+
+Thus, the Laplacian  for $\textbf{r} \neq 0 $ is given by
+\begin{equation}
+\nabla^2 \left( \frac{1}{r} \right) =\frac{\partial^2 }{\partial x^k x^k} \left( \frac{1}{r} \right) = \frac{1}{r^3} \left[ 3 n^k n^k - \delta_{kk} \right] = 0.
+\end{equation}
+
+The behavior at $\textbf{r}=0$ is studied by integrating the term $\nabla^2 \left( \frac{1}{r} \right)$ over a tiny spherical volume $V$ centered at the origin. In this case the divergence theorem gives
+\begin{equation}
+\int _V \left( \nabla^2 \frac{1}{r} \right) d^3 r = \int _V  \boldsymbol{\nabla} \cdot \left( \boldsymbol{\nabla} \frac{1}{r} \right) d^3 r = \oint _S \left( \boldsymbol{\nabla} \frac{1}{r} \right) \cdot d\textbf{S} = - \oint _S  \frac{\hat{\textbf{r}}}{r^2}\cdot d\textbf{S}.
+\end{equation}
+
+Since the volume is a sphere, the surface element is $d\textbf{S} = r^2 \sin^2 \theta d\theta d\varphi \hat{\textbf{r}}$. Thus,
+\begin{equation}
+\int _V \left( \nabla^2 \frac{1}{r} \right) d^3 r = - \int _0^{2\pi} d\varphi \int_0^\pi \sin \theta d\theta = -4\pi.
+\end{equation}
+
+These results can be summarized in the expression
+\begin{equation}
+\int _V \left( \nabla^2 \frac{1}{r} \right) d^3 r = 
+\begin{cases}  
+0 \textrm{ if } r \neq 0 \\
+-4\pi \textrm{ if } r = 0
+\end{cases}
+\end{equation}
+which can be obtained by writing
+\begin{equation}
+\nabla^2 \frac{1}{r} = -4\pi \delta(\textbf{r}).
+\end{equation}
+
+In general, recovering the term $\textbf{r}'$, we have that 
+\begin{equation}
+\nabla^2 \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) = -4\pi \delta(\textbf{r} - \textbf{r}'),
+\end{equation}
+and therefore, replacing this result in the scalar potential (\ref{eq:scalarPotential}), we recover the Poisson equation,
+\begin{eqnarray}
+\nabla ^2 \Phi (\textbf{r}) &=&  \frac{1}{4\pi \epsilon_0}  \int \rho (\textbf{r}') \nabla^2 \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right| } \right) d^3r' \\
+\nabla ^2 \Phi (\textbf{r}) &=& - \frac{1}{4\pi \epsilon_0}  \int \rho (\textbf{r}') 4\pi \delta(\textbf{r}- \textbf{r}') d^3r' \\
+\nabla ^2 \Phi (\textbf{r}) &=& -  \frac{\rho (\textbf{r}) }{\epsilon_0}.
+\end{eqnarray}
+
+\section{Potential Energy}
+The product of a charge times a scalar potential, $U = q \Phi$ is interpreted as the potential energy of that charge in the presence of the corresponding electrostatic field. Similarly, the work done in moving the charge $q$ from a point $A$ to a point $B$ in space against the electric field is given by
+\begin{equation}
+W = - \int_A^B \textbf{F} \cdot d\textbf{l} = - q \int_A^B \textbf{E} \cdot d\textbf{l},
+\end{equation}
+or in terms of the electrostatic potential
+\begin{equation}
+W =  q \int_A^B \boldsymbol{\nabla} \Phi \cdot d\textbf{l} = q \int_{\Phi_A} ^{\Phi_B} d\Phi = q\left(s \Phi_A - \Phi_B \right).
+\end{equation}
+
+\section{Discontinuities in the Electric Field and Potential}
+
+Suppose a surface $S$ with surface charge density $\sigma(\textbf{r})$ and with normal unit vector $\hat{\textbf{n}}$ going from side 1 to side 2 of $S$. Consider also that the electric field has values $\textbf{E}_1$ and $\textbf{E}_2$ on each side of the surface. Hence, considering a cylindrical surface crossing $S$, Gauss' law gives
+\begin{equation}
+\oint \textbf{E} \cdot \hat{\textbf{n}} dS =\frac{1}{\epsilon_0} \int_V \rho d^3x =\frac{1}{\epsilon_0} \int_S \sigma dS
+\end{equation}
+\begin{equation}
+\int_S \textbf{E}_2 \cdot \hat{\textbf{n}} dS - \int_S \textbf{E}_1 \cdot \hat{\textbf{n}} dS =\frac{1}{\epsilon_0} \int_S \sigma dS
+\end{equation}
+from which
+\begin{equation}
+(\textbf{E}_2 -\textbf{E}_1 ) \cdot \hat{\textbf{n}} = \frac{\sigma}{\epsilon_0}. \label{eq:EDiscontinuity}
+\end{equation}
+
+This relation doesn't specify completely the electric field, but tells that there is a discontinuity at the surface due to the charge density $\sigma$. On the other hand, the scalar potential can be written in general terms as in equation (\ref{eq:CoulombPotential}), but replacing the density $\rho$ with $\sigma$, i.e.
+\begin{equation}
+\Phi (\textbf{r}) =  \frac{1}{4\pi \epsilon_0}  \int_S   \frac{\sigma (\textbf{r}') }{\left| \textbf{r} - \textbf{r}' \right| }  dS'.
+\label{surfacePotential}
+\end{equation}
+
+\section{Dipole-Layer Distribution}
+
+A dipole-layer corresponds to configuration in which a surface $S$ with charge density $\sigma(\textbf{r})$ is accompanied of another surface $S'$ with charge density $-\sigma(\textbf{r})$. If $S'$ approach infinitesimally close to $S$ while $\sigma(\textbf{r})$ becomes infinite, the product of this charge density and the local separation between surfaces, $d(\textbf{r})$, corresponds to the \textit{dipole-layer distribution strength},
+\begin{equation}
+D(\textbf{r}) = \lim_{d(\textbf{r}) \rightarrow 0 } \sigma(\textbf{r}) d(\textbf{r}).
+\end{equation}
+
+This quantity has a direction defined as normal to the surface $S$ and in going from the negative to the positive charge.\\
+In order to obtain the scalar potential produce by this configuration we use equation (\ref{surfacePotential}) to write
+\begin{equation}
+\Phi (\textbf{r}) =  \frac{1}{4\pi \epsilon_0}  \int _S  \frac{\sigma (\textbf{r}') }{\left| \textbf{r} - \textbf{r}' \right| }  dS'- \frac{1}{4\pi \epsilon_0}  \int_{S'}   \frac{\sigma (\textbf{r}') }{\left| \textbf{r} - \textbf{r}' + \hat{\textbf{n}} d \right| }  dS'.
+\end{equation}
+
+Now, it is possible to expand the integrand in the second term for small $d$ using the expression
+\begin{equation}
+\frac{1 }{\left| \textbf{x} - \boldsymbol{\alpha} \right| } = \frac{1}{x} + \boldsymbol{\alpha} \cdot \boldsymbol{\nabla} \left( \frac{1}{x} \right) + ... 
+\end{equation}
+when $\left| \boldsymbol{\alpha} \right| \ll \left| \textbf{x} \right|$. This gives
+\begin{equation}
+\Phi (\textbf{r}) =  \frac{1}{4\pi \epsilon_0}  \int _S  \frac{\sigma (\textbf{r}') }{\left| \textbf{r} - \textbf{r}' \right| }  dS'- \frac{1}{4\pi \epsilon_0}  \int_{S'}  \sigma (\textbf{r}')  \left[ \frac{1}{\left| \textbf{r} - \textbf{r}'  \right| } +  d \hat{\textbf{n}} \cdot \boldsymbol{\nabla} \left( \frac{1}{\left| \textbf{r} - \textbf{r}'  \right| } \right) + ...\right] dS'
+\end{equation}
+\begin{equation}
+\Phi (\textbf{r}) =  \frac{1}{4\pi \epsilon_0}  \int_{S'}  \sigma (\textbf{r}')  d \hat{\textbf{n}} \cdot \boldsymbol{\nabla} \left( \frac{1}{\left| \textbf{r} - \textbf{r}'  \right| } \right) dS'
+\end{equation}
+and then, in the limit $d \rightarrow 0$, we obtain the dipole-layer distribution strength,
+\begin{equation}
+\Phi (\textbf{r}) =  \frac{1}{4\pi \epsilon_0}  \int_{S}  D(\textbf{r}') \hat{\textbf{n}} \cdot \boldsymbol{\nabla} \left( \frac{1}{\left| \textbf{r} - \textbf{r}'  \right| } \right) dS'.
+\end{equation}
+
+Note that
+\begin{equation}
+\hat{\textbf{n}} \cdot \boldsymbol{\nabla} \left( \frac{1}{\left| \textbf{r} - \textbf{r}'  \right| } \right) dS' = - \hat{\textbf{n}} \cdot  \left( \frac{\textbf{r} - \textbf{r}' }{\left| \textbf{r} - \textbf{r}'  \right| ^3 } \right) dS' = -    \frac{ \cos \theta dS' }{\left| \textbf{r} - \textbf{r}'  \right| ^2 } = -d\Omega,
+\end{equation}
+where $d\Omega$ is the solid angle swept by $dS'$ as seen from the position $\textbf{r}$. Hence, the scalar potential is simply
+\begin{equation}
+\Phi (\textbf{r}) = -  \frac{1}{4\pi \epsilon_0}  \int_{S}  D(\textbf{r}') d\Omega.
+\end{equation}
+
+\section{Energy Density and Capacitance}
+
+If a point charge $q_i$ is brought from infinity to a point $\textbf{r}_i$ in a region with an electric field described by the potnetial $\Phi(\textbf{r}_i)$ (vanishing at infinity), the work done on the charge is 
+\begin{equation}
+W_i = q_i \Phi(\textbf{r}_i).
+\end{equation}
+This also corresponds to the potential energy of the charged particle at point $\textbf{r}$. If the potential is produced by an array of $(n-1)$ point charges $q_j$ with $j=1,2,...,n-1$ located at positions $\textbf{r}_j$, we can write
+\begin{equation}
+\Phi (\textbf{r}_i) = \frac{1}{4\pi \epsilon_0} \sum_{j=1}^{n-1} \frac{q_j}{\left| \textbf{r}_i - \textbf{r}_j \right|} .
+\end{equation}
+
+Hence, we have
+\begin{equation}
+W_i =  \frac{q_i}{4\pi \epsilon_0} \sum_{j=1}^{n-1} \frac{q_j}{\left| \textbf{r}_i - \textbf{r}_j \right|}.
+\end{equation}
+
+If we consider that we add each charge in succession to build the whole system, we sum over $i$ and $j$ (with $i\neq j$) and divide by $2$ to obtain the \textit{total potential energy} of the system,
+\begin{equation}
+W =  \frac{1}{8 \pi \epsilon_0} \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{q_i q_j}{\left| \textbf{r}_i - \textbf{r}_j \right|}.
+\end{equation}
+
+This expression can be generalized to charge distributions as
+\begin{equation}
+W =  \frac{1}{8 \pi \epsilon_0} \int \int \frac{\rho(\textbf{r}) \rho(\textbf{r}')}{\left| \textbf{r}_i - \textbf{r}_j \right|} d^3x d^3x'
+\end{equation}
+or as
+\begin{equation}
+W =  \frac{1}{2} \int \rho(\textbf{r}) \Phi(\textbf{r}) d^3x.
+\end{equation}
+
+Using Poisson equation we can write this equation as
+\begin{equation}
+W =  -\frac{\epsilon_0}{2} \int  \Phi(\textbf{r}) \nabla^2 \Phi (\textbf{r}) d^3x.
+\end{equation}
+
+Since 
+\begin{equation}
+\boldsymbol{\nabla} \cdot (\Phi \boldsymbol{\nabla} \Phi) = \left| \boldsymbol{\nabla} \Phi \right| ^2 + \Phi \nabla^2 \Phi,
+\end{equation}
+we have 
+\begin{equation}
+W =  -\frac{\epsilon_0}{2} \int \left[ \boldsymbol{\nabla} \cdot (\Phi \boldsymbol{\nabla} \Phi) - \left| \boldsymbol{\nabla} \Phi \right| ^2 \right] d^3x.
+\end{equation}
+The first term is zero because the integration is over all space and  the potential vanishes at infinity. Therefore we are left with
+\begin{equation}
+W =  \frac{\epsilon_0}{2} \int \left| \boldsymbol{\nabla} \Phi \right| ^2 d^3x = \frac{\epsilon_0}{2} \int \left| \textbf{E} \right| ^2 d^3x .
+\end{equation}
+ 
+ The integrand in the last expression is identified with the energy density of the electrostatic field,
+ \begin{equation}
+ \mathcal{W} = \frac{\epsilon_0}{2} \left| \textbf{E} \right| ^2 .
+ \end{equation}
+ 
+ \textbf{Example}
+Consider a conductor with a surface charge density $\sigma$. Gauss' law gives the field in the surroundings of the conductor as
+ \begin{equation}
+ \left| \textbf{E} \right| ^2 = \frac{\sigma^2}{\epsilon_0^2}.
+ \end{equation}
+ and then
+ \begin{equation}
+ \mathcal{W} = \frac{\sigma^2}{2\epsilon_0} .
+ \end{equation}
+
+If an area element $\Delta a$ of the conducting surface is displaced outwards in a small distance $\Delta x$, the electrostatic energy decreases in the amount
+\begin{equation}
+\Delta W = - \mathcal{W} \Delta a \Delta x = - \frac{\sigma^2}{2\epsilon_0}\Delta a \Delta x 
+\end{equation}
+
+\subsection{Capacitance}
+Consider a system of $n$ conductors, each with potential $V_i$ and total carge $Q_i$ in empty space. The electrostatic potential energy of this system can be expressed in terms of the potentials and some geometrical quantities called coefficients of capacity. Since the potential is proportional to the electric charge we write
+\begin{equation}
+V_i = \sum_{j=1}^n p_{ij} Q_j
+\end{equation}
+where the coefficients $p_{ij}$ depend on the geometry of the conductors. Inverting these $n$ equations we get expressions in the form
+\begin{equation}
+Q_i = \sum_{j=1}^n C_{ij} V_j
+\end{equation}
+where the coefficients $C_{ii}$ are called \textit{capacities} or \textit{capacitances} and the terms $C_{ij}$ with $i\neq j$ are called \textit{coefficients of induction}.\\
+Te capacitance of a conductor is defined as the total charge on the conductor when it is maintained at unit potential and all other conductors are held at zero potential.\\
+\bigskip
+
+The potential energy for the system of conductors is written as 
+\begin{equation}
+W =  \frac{1}{2} \sum_{i=1} ^n Q_i V_i = \frac{1}{2}  \sum_{i=1} ^n \sum_{j=1} ^n C_{ij}  V_i V_j 
+\end{equation}
+
+
+\section{Green's Theorems}
+Now we will show two identities or theorems due to George Green (1824). The first one uses the divergence theorem, which writes
+\begin{equation}
+\int_V \boldsymbol{\nabla} \cdot \textbf{A} d^3x = \oint_S \textbf{A} \cdot \textbf{dS} 
+\end{equation}
+for any well-behaved vector field $\textbf{A}$. Considering two arbitrary scalar fields $\phi$ and $\psi$ such that $\textbf{A}=\phi \boldsymbol{\nabla} \psi$, we have the vector identity
+\begin{equation}
+\boldsymbol{\nabla} \cdot \textbf{A} = \boldsymbol{\nabla} \cdot (\phi \boldsymbol{\nabla} \psi) = \phi \nabla^2 \psi +\boldsymbol{\nabla} \phi \cdot \boldsymbol{\nabla} \psi . 
+\end{equation}
+
+Similarly, writing the surface element as $\textbf{dS} = \hat{\textbf{n}} da$, we have
+\begin{equation}
+\textbf{A} \cdot \textbf{dS} = \phi \boldsymbol{\nabla} \psi \cdot \textbf{dS} =  \phi \boldsymbol{\nabla} \psi \cdot \hat{\textbf{n}} da = \phi \frac{\partial \psi}{\partial n} da ,
+\end{equation}
+where $\frac{\partial }{\partial n}$ represents the normal derivative at the surface $S$. Replacing these relations in the divergence theorem gives the \textit{Green's first identity},
+\begin{equation}
+\int_V \left[ \phi \nabla^2 \psi +\boldsymbol{\nabla} \phi \cdot \boldsymbol{\nabla} \psi \right] d^3x = \oint_S \phi \frac{\partial \psi}{\partial n} da.  \label{eq:GreenFirstIdentity}
+\end{equation}
+
+Considering now the field $\textbf{A}=\psi \boldsymbol{\nabla} \phi$ gives the relation
+\begin{equation}
+\int_V \left[ \psi \nabla^2 \phi +\boldsymbol{\nabla} \psi \cdot \boldsymbol{\nabla} \phi \right] d^3x = \oint_S \psi \frac{\partial \phi}{\partial n} da. 
+\end{equation}
+
+Subtracting these two relations we obtain the \textit{Green's second identity},
+\begin{equation}
+\int_V \left[ \phi \nabla^2 \psi - \psi \nabla^2 \phi   \right] d^3x = \oint_S \left[ \phi \frac{\partial \psi}{\partial n} - \psi \frac{\partial \phi}{\partial n} \right] da. \label{eq:GreenSecondIdentity}
+\end{equation}
+
+As a particular example of this theorem, consider the functions 
+\begin{eqnarray}
+\psi &=& \frac{1}{\left| \textbf{r} - \textbf{r}' \right|}\\
+\phi &=& \Phi(\textbf{r}').
+\end{eqnarray}
+
+This gives
+\begin{equation}
+\int_V \left[ \Phi (\textbf{r}') \nabla'^2 \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) - \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \nabla'^2 \Phi (\textbf{r}')  \right] d^3x' = \oint_S \left[ \Phi \frac{\partial }{\partial n'} \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) - \frac{1}{\left| \textbf{r} - \textbf{r}' \right|}  \frac{\partial \Phi}{\partial n'} \right] da'.
+\end{equation}
+
+Using Poisson equation and the Dirac delta function this becomes
+\begin{equation}
+\int_V \left[ -4\pi \Phi (\textbf{r}') \delta(\textbf{r} - \textbf{r}') + \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \frac{\rho(\textbf{r}')}{\epsilon_0}  \right] d^3x' = \oint_S \left[ \Phi \frac{\partial }{\partial n'} \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) - \frac{1}{\left| \textbf{r} - \textbf{r}' \right|}  \frac{\partial \Phi}{\partial n'} \right] da'.
+\end{equation}
+
+If the point $\textbf{r}$ lies within the volume $V$ the first term is integrated to give
+\begin{equation}
+-4\pi \Phi (\textbf{r})+\int_V \left[  \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \frac{\rho(\textbf{r}')}{\epsilon_0}  \right] d^3x' = \oint_S \left[ \Phi \frac{\partial }{\partial n'} \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) - \frac{1}{\left| \textbf{r} - \textbf{r}' \right|}  \frac{\partial \Phi}{\partial n'} \right] da'
+\end{equation}
+
+\begin{equation}
+\Phi (\textbf{r})= \frac{1}{4\pi \epsilon_0} \int_V  \frac{\rho(\textbf{r}')}{\left| \textbf{r} - \textbf{r}' \right|}  d^3x'  + \frac{1}{4\pi} \oint_S \left[   \frac{1}{\left| \textbf{r} - \textbf{r}' \right|}  \frac{\partial \Phi}{\partial n'} - \Phi \frac{\partial }{\partial n'} \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) \right] da'. \label{eq:GreenTheorem2}
+\end{equation}
+
+On the other hand, if the point $\textbf{r}$ doesn't lie within the volume $V$ we obtain
+\begin{equation}
+ \frac{1}{ \epsilon_0} \int_V  \frac{\rho(\textbf{r}')}{\left| \textbf{r} - \textbf{r}' \right|}  d^3x'  = \oint_S \left[ \Phi \frac{\partial }{\partial n'} \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) - \frac{1}{\left| \textbf{r} - \textbf{r}' \right|}  \frac{\partial \Phi}{\partial n'} \right] da'
+\end{equation}
+
+...
+
+\section{Dirichlet and Neumann Boundary Conditions}
+In order to specify completely a solution of Poisson or Laplace equation it is necessary to give some boundary conditions. When the value of the potential on a closed surface is given we are talking about a \textit{Dirichlet boundary condition}. If the value of electric field (normal derivative of the potential) is given on the surface, it is known as a \textit{Neumann boundary condition}.\\
+
+In order to probe that the solution of the Poisson equations is unique given D- or N- boundary conditions,  consider a volume $V$ surrounded by a closed surface $S$ at which boundary conditions are specified. Suppose that there exist two solutions of the Poisson equation, $\Phi_1$ and $\Phi_2$, satisfying the boundary conditions. Then the quantity 
+\begin{equation}
+\Psi = \Phi_1 - \Phi_2
+\end{equation}
+will satisfy the relation
+\begin{equation}
+\nabla^2 \Psi = \nabla^2 \Phi_1 - \nabla \Phi_2 = -\frac{\rho}{\epsilon_0} + \frac{\rho}{\epsilon_0} = 0
+\end{equation}
+inside the volume $V$. It also satisfies
+\begin{equation}
+\left. \Psi \right|_S = \left. \Phi_1 \right|_S - \left. \Phi \right|_S = 0
+\end{equation}
+for Dirichlet boundary conditions or
+\begin{equation}
+\left. \frac{\partial \Psi}{\partial n} \right|_S = \left. \frac{\partial \Phi_1}{\partial n} \right|_S - \left. \frac{\partial \Phi_2}{\partial n} \right|_S = 0
+\end{equation}
+for Neumann boundary conditions. However, Green's first identity (\ref{eq:GreenFirstIdentity}) give, using $\phi = \psi = \Psi$,
+\begin{equation}
+\int_V \left[ \Psi \nabla^2 \Psi +\boldsymbol{\nabla} \Psi \cdot \boldsymbol{\nabla} \Psi \right] d^3x = \oint_S \Psi \frac{\partial \Psi}{\partial n} da
+\end{equation}
+and reduces for both boundary conditions to
+\begin{equation}
+\int_V \boldsymbol{\nabla} \Psi \cdot \boldsymbol{\nabla} \Psi  d^3x = 0
+\end{equation}
+or
+\begin{equation}
+\int_V \left| \boldsymbol{\nabla} \Psi \right|^2 d^3x = 0
+\end{equation}
+from which we conclude that $\boldsymbol{\nabla} \Psi =0$ or equivalently $\Psi = \textrm{constant}$ inside $V$. For Dirichlet boundary conditions we have $\Psi=0$ on $S$, which implies that $\Phi_1 = \Phi_2$ inside $V$, i.e. the solution is unique.\\
+On the other hand, for Neumann boundary conditions $\frac{\partial \Psi}{\partial n} =0$ on $S$, and after integration it gives $\Phi_1 - \Phi_2 = \textrm{constant}$ inside $V$, i.e. the solution is unique apart from an unimportant additive constant.
+
+\section{Formal Solution of the  Poisson Equation with Boundary Conditions. Green Functions}
+We have shown that
+\begin{equation}
+\nabla^2 \left( \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} \right) = -4\pi \delta(\textbf{r} - \textbf{r}').
+\end{equation}
+
+This is an example of the \textit{Green functions}, which satisfy the equation
+\begin{equation}
+\nabla^2 G(\textbf{r}, \textbf{r}') = -4\pi \delta(\textbf{r} - \textbf{r}'). \label{eq:GreenFunctionDefinition}
+\end{equation}
+
+In general we can write $G$ as
+\begin{equation}
+G(\textbf{r}, \textbf{r}') = \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} + F(\textbf{r}, \textbf{r}')
+\end{equation}
+with $F$ a function satisfying 
+\begin{equation}
+\nabla^2 G(\textbf{r}, \textbf{r}') = 0
+\end{equation}
+inside $V$. Green's theorem (\ref{eq:GreenSecondIdentity}) let us write the general solution for the potential and the additional freedom given by function $F$ can be used to eliminate one of the two surface integrals in the right hand side of the equation, giving an electrostatic  potential satisfying either Dirichlet or Neumann boundary conditions. To show this, let us write equation (\ref{eq:GreenSecondIdentity}) using $\phi = \Phi$ and $\psi = G(\textbf{r}, \textbf{r}')$,
+\begin{equation}
+\int_V \left[ \Phi (\textbf{r}') \nabla^2 G(\textbf{r}, \textbf{r}') - G(\textbf{r}, \textbf{r}') \nabla^2 \Phi (\textbf{r}')  \right] d^3x' = \oint_S \left[ \Phi \frac{\partial G(\textbf{r}, \textbf{r}')}{\partial n'} - G(\textbf{r}, \textbf{r}') \frac{\partial \Phi}{\partial n'} \right] da'
+\end{equation}
+\begin{equation}
+\int_V \left[ -4 \pi \Phi (\textbf{r}') \delta (\textbf{r} - \textbf{r}') + G(\textbf{r}, \textbf{r}') \frac{\rho (\textbf{r}')}{\epsilon_0}   \right] d^3x' = \oint_S \left[ \Phi \frac{\partial G(\textbf{r}, \textbf{r}')}{\partial n'} - G(\textbf{r}, \textbf{r}') \frac{\partial \Phi}{\partial n'} \right] da'
+\end{equation}
+\begin{equation}
+ -4 \pi \Phi (\textbf{r}) + \int_V G(\textbf{r}, \textbf{r}') \frac{\rho (\textbf{r}')}{\epsilon_0}  d^3x' = \oint_S \left[ \Phi \frac{\partial G(\textbf{r}, \textbf{r}')}{\partial n'} - G(\textbf{r}, \textbf{r}') \frac{\partial \Phi}{\partial n'} \right] da'
+\end{equation}
+\begin{equation}
+ \Phi (\textbf{r}) = \frac{1}{4 \pi  \epsilon_0} \int_V \rho (\textbf{r}') G(\textbf{r}, \textbf{r}')   d^3x' +\frac{1}{4\pi} \oint_S \left[ G(\textbf{r}, \textbf{r}') \frac{\partial \Phi}{\partial n'} - \Phi \frac{\partial G(\textbf{r}, \textbf{r}')}{\partial n'}  \right] da'. 
+\end{equation}
+
+For Dirichlet boundary conditions, we choose the function $F$ so that
+\begin{equation}
+G_D (\textbf{r}, \textbf{r}') = 0 
+\end{equation}
+for $\textbf{x}'$ on $S$. Hence, the first term in the surface integral vanishes and the solution is 
+\begin{equation}
+ \Phi (\textbf{r}) = \frac{1}{4 \pi  \epsilon_0} \int_V \rho (\textbf{r}') G_D (\textbf{r}, \textbf{r}')  d^3x' -\frac{1}{4\pi} \oint_S  - \Phi \frac{\partial G _D (\textbf{r}, \textbf{r}')}{\partial n'}  da'. 
+\end{equation}
+
+On the other hand, for Neumann boundary conditions we must take another fact into account. Note that Gauss's theorem applied to the volume integral of equation (\ref{eq:GreenFunctionDefinition}) over the whole space gives
+\begin{equation}
+\int_V \nabla^2 G(\textbf{r}, \textbf{r}') d^3x' = -4\pi \int \delta(\textbf{r} - \textbf{r}') d^3x'
+\end{equation}
+\begin{equation}
+\int_V \boldsymbol{\nabla} \cdot  \boldsymbol{\nabla}  G(\textbf{r}, \textbf{r}') d^3x' = -4\pi 
+\end{equation}
+
+\begin{equation}
+\oint_S   \boldsymbol{\nabla}  G(\textbf{r}, \textbf{r}') \textbf{dS}' = -4\pi 
+\end{equation}
+\begin{equation}
+\oint_S   \frac{\partial G(\textbf{r}, \textbf{r}')}{\partial n'} da' = -4\pi .
+\end{equation}
+
+Therefore, the condition that we will impose to obtain Neumann boundary conditions will be
+\begin{equation}
+\frac{\partial G_N(\textbf{r}, \textbf{r}')}{\partial n'} = -\frac{4\pi}{S}
+\end{equation}
+for $\textbf{x}'$ on $S$. Hence the general solution becomes this time
+\begin{equation}
+ \Phi (\textbf{r}) = \frac{1}{4 \pi  \epsilon_0} \int_V \rho (\textbf{r}') G(\textbf{r}, \textbf{r}')   d^3x' +\frac{1}{4\pi} \oint_S G(\textbf{r}, \textbf{r}') \frac{\partial \Phi}{\partial n'}da' + \frac{1}{S} \oint_S  \Phi  da'
+\end{equation}
+\begin{equation}
+ \Phi (\textbf{r}) = \frac{1}{4 \pi  \epsilon_0} \int_V \rho (\textbf{r}') G(\textbf{r}, \textbf{r}')   d^3x' +\frac{1}{4\pi} \oint_S G(\textbf{r}, \textbf{r}') \frac{\partial \Phi}{\partial n'}da' + \langle \Phi \rangle _S,
+\end{equation}
+where
+\begin{equation}
+\langle \Phi \rangle _S =  \frac{1}{S} \oint_S  \Phi  da'
+\end{equation}
+is the average value of the potential over the whole surface.\\
+\bigskip
+In order to give a physical meaning for the function $F(\textbf{r}, \textbf{r}')$, note that it is a solution of the Laplace equation inside $V$, so it represents the potential of a system of charges \textit{external to the volume } $V$. This  external distribution of charges is chosen to satisfy the homogeneous boundary conditions of zero potential or zero normal derivative on the surface $S$ (D- or N- boundary conditions) when combined with the other term to give  the total potential. This interpretation will be important in the method of images, which will be equivalent to find the appropiate function $F(\textbf{r}, \textbf{r}')$ to satisfy the boundary conditions.
+
+\section{Variational Approach to Poisson Equation and Boundary Conditions}
+
+Consider the integral functional,
+\begin{equation}
+I[\psi] = \frac{1}{2} \int_V \boldsymbol{\nabla} \psi \cdot \boldsymbol{\nabla} \psi d^3x - \int_V g\psi d^3x,
+\end{equation}
+where $\psi(\textbf{r})$ is a well behaved function inside $V$ and on the boundary surface $S$ while $g(\textbf{r})$ is a "source" function without singularities within $V$. Making the infinitesimal transformation $\psi \rightarrow \psi + \delta \psi $, we obtain
+\begin{equation}
+\delta I =  \int_V \boldsymbol{\nabla} \psi \cdot \boldsymbol{\nabla} ( \delta  \psi ) d^3x - \int_V g \delta \psi d^3x + \mathcal{O} (\delta \psi ^2).
+\end{equation}
+
+Using Green's first identity (\ref{eq:GreenFirstIdentity}) with $\phi = \delta \psi$ and $\psi = \psi$ gives
+\begin{equation}
+\delta I =  \int_V \left[  - \nabla ^2 \psi \right] \delta \psi d^3x + \oint_S \delta \psi \frac{\partial \psi}{\delta n} da - \int_V g \delta \psi d^3x + \mathcal{O} (\delta \psi ^2)
+\end{equation}
+\begin{equation}
+\delta I =  \int_V \left[  - \nabla ^2 \psi - g \right] \delta \psi d^3x + \oint_S \delta \psi \frac{\partial \psi}{\delta n} da + \mathcal{O} (\delta \psi ^2).
+\end{equation}
+If $\delta \psi =0$ on the boundary surface, the second integral vanishes and we conclude that $\delta I$ vanishes to first order in $delta \psi$ if
+\begin{equation}
+ \nabla^2 \psi = -g.
+ \end{equation} 
+ Hence, this variational derivation gives Poisson equation for electrostatics if we chose $\psi = \Phi$ and $g = \frac{\rho}{\epsilon_0}$. Note that Dirichlet's boundary conditions are given by the assumed  condition $\delta \psi = \delta \Phi = 0$ on the boundary surface $S$.\\
+ 
+ \bigskip
+ 
+ In order to obtain the Poisson equation together with the Neumann boundary conditions we use the integral functional
+ \begin{equation}
+I[\psi] = \frac{1}{2} \int_V \boldsymbol{\nabla} \psi \cdot \boldsymbol{\nabla} \psi d^3x - \int_V g\psi d^3x - \oint_s f \psi da,
+\end{equation}
+and we suppose that the boundary conditions on $\psi$ are given by
+\begin{equation}
+ \left. \frac{\partial \psi}{\partial n} \right|_S  = f(\textbf{s})
+\end{equation} 
+with $s$ a point on the surface $S$. Considering the infinitesimal transformation $\psi \rightarrow \psi + \delta \psi $ and Green's first identity as before, we obtain
+\begin{equation}
+\delta I =  \int_V \left[  - \nabla ^2 \psi - g \right] \delta \psi d^3x + \oint_S \left[ \frac{\partial \psi}{\delta n} - f(\textbf{s}) \right]\delta \psi  da + \mathcal{O} (\delta \psi ^2).
+\end{equation}
+
+Thus, it is clear that requiring that $\delta I = 0$ independently of $\delta \psi$ implies that
+\begin{equation}
+ \nabla^2 \psi = -g \textrm{ within }V
+ \end{equation} 
+ and
+\begin{equation}
+ \left. \frac{\partial \psi}{\partial n} \right|_S  = f(\textbf{s}) \textrm{ on }S.
+\end{equation} 
