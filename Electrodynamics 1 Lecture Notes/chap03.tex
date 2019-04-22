@@ -54,11 +54,11 @@ and
 
 These relations are combined to obtain the image charge
 \begin{equation}
- q_I = -\frac{R}{r'} q
+ q_I = -\frac{R}{r'} q \label{ImageCharge01}
  \end{equation}
 and its position
 \begin{equation}
-r'_I = \frac{R^2}{r'}.
+r'_I = \frac{R^2}{r'}.  \label{ImageChargePosition01}
 \end{equation}
 
 If the charge $q$ is brought closer to the sphere (i.e. $r' \rightarrow R$) the image charge grows in magnitude, $q_I \rightarrow -q$, and it is moves to the center of the sphere, $r'_I \rightarrow R$. \\
@@ -97,7 +97,7 @@ Replacing the values of $q_I$ and $r'_I$ we have
  
 Defining $\textbf{n} \cdot \textbf{n}' = \cos \gamma$ we write
   \begin{equation}
- \sigma = - \frac{q}{4 \pi R^2 } \frac{R}{r'} \frac{ \left(  1- \frac{ R^2}{r'^2  }  \right) }{ \left( 1+ \left(\frac{R}{r'}\right)^2 - 2 \frac{R}{r'} \cos \gamma \right)^{3/2} } .  
+ \sigma = - \frac{q}{4 \pi R^2 } \frac{R}{r'} \frac{ \left(  1- \frac{ R^2}{r'^2  }  \right) }{ \left( 1+ \left(\frac{R}{r'}\right)^2 - 2 \frac{R}{r'} \cos \gamma \right)^{3/2} } .  \label{ConductingSphereChargeDensity}
  \end{equation} 
 
 The force acting on $q$ is calculated using the image charge $q_I$ and the distance between them: 
@@ -122,7 +122,7 @@ If the point charge $q$ lies inside the sphere, the the same results apply.
 
 In order to obtain the potential due to a point charge $q$ near a charged, insulated, conducting sphere we begin with the result of the previous section in which the grounded conducting sphere acquires a total charge of $q_I$ distributed on its surface. The the ground is disconnected and we add to the sphere the charge $(Q-q_I)$ which will bring the total charge of the sphere up to $Q$. However, we may think as if this added charge will simply distribute uniformly over the surface of the sphere (because the external point charge $q$ is already balanced by the image $q_I$). Therefore,  the total potential is obtained by adding the potential found in the previous section, (\ref{ImageExample1}), and the potential of a point charge $(Q-q_I)$ at the origin. This gives
 \begin{equation}
-\Phi (\textbf{r}) = \frac{1}{4\pi \epsilon_0} \frac{q}{\left| \textbf{r} - \textbf{r}' \right|} + \frac{1}{4\pi \epsilon_0} \frac{q_I}{\left| \textbf{r} - \textbf{r}'_I \right|} +  \frac{1}{4\pi \epsilon_0} \frac{Q-q_I}{\left| \textbf{r} \right|}
+\Phi (\textbf{r}) = \frac{1}{4\pi \epsilon_0} \frac{q}{\left| \textbf{r} - \textbf{r}' \right|} + \frac{1}{4\pi \epsilon_0} \frac{q_I}{\left| \textbf{r} - \textbf{r}'_I \right|} +  \frac{1}{4\pi \epsilon_0} \frac{Q-q_I}{\left| \textbf{r} \right|} \label{ChargedSpherePotential}
 \end{equation}
 \begin{equation}
 \Phi (\textbf{r}) = \frac{1}{4\pi \epsilon_0} \left[ \frac{q}{\left| \textbf{r} - \textbf{r}' \right|} +  \frac{q_I}{\left| \textbf{r} - \textbf{r}'_I \right|} +   \frac{Q-q_I}{\left| \textbf{r} \right|} \right]
@@ -162,6 +162,241 @@ Note that in the linimt $r' \gg R$ the force reduces to the Coulomb's law,
 \lim_{r' \gg R} \textbf{F}  =  \frac{1}{4\pi \epsilon_0}  \frac{qQ}{r'^2} \textbf{n}
 \end{equation}
 
+\subsection{Point Charge in the Presence of a Conducting Sphere at Fixed Potential}
+In this case we consider a conducting sphere at a fixed potential $V$. The problem is treated exactly as that of a charged, insulated conducting sphere but, instead of the charge $(Q-q_I)$ at its center, we use the value $V (4\pi \epsilon_0 R)$. Hence, equation (\ref{ChargedSpherePotential})  becomes
+\begin{equation}
+\Phi (\textbf{r}) = \frac{1}{4\pi \epsilon_0} \frac{q}{\left| \textbf{r} - \textbf{r}' \right|} + \frac{1}{4\pi \epsilon_0} \frac{q_I}{\left| \textbf{r} - \textbf{r}'_I \right|} +  \frac{V R}{\left| \textbf{r} \right|}.
+\end{equation}
+
+The force acting on the charge $q$ is obtained by adding to equation (\ref{ForceImage1}) a Coulomb force produced by $V$ , 
+\begin{equation}
+\textbf{F} = -\frac{1}{4\pi \epsilon_0} \frac{q^2}{R^2}  \left( \frac{R}{r'}  \right)^3 \left( 1 - \frac{R^2}{r'^2}\right)^{-2} \textbf{n} +  \frac{qVR}{r'^2} \textbf{n}
+\end{equation}
+\begin{equation}
+\textbf{F} =\frac{q}{r'^2} \left[ VR -\frac{1}{4\pi \epsilon_0} \frac{qR}{r'}  \left( 1 - \frac{R^2}{r'^2}\right)^{-2} \textbf{n} \right] \textbf{n}
+\end{equation}
+\begin{equation}
+\textbf{F} =\frac{q}{r'^2} \left[ VR -\frac{1}{4\pi \epsilon_0} \frac{qRr'^3}{ \left( r'^2 - \frac{R^2}{r'^2}\right)^2}  \textbf{n} \right] \textbf{n} .
+\end{equation}
+
+\subsection{Conducting Sphere ina Uniform Electric Field}
+Consider now a conducting sphere of radius $R$ in the presence of an uniform electric field $\textbf{E} = E_0 \textbf{e}_z$. Since the uniform electric field may be thought as produced by an appropriate distribution of electric charge at infinity, we may use the method of images, using some point charges, to solve this problem.\\
+
+Consider two point charges $Q$ and $-Q$ at positions $z=-\ell$ and $z=\ell$, respectively. The electric field produced in a region near the origin is approximately constant with the value $\textbf{E}_0 \approx \frac{2Q}{4\pi \epsilon_0 \ell^2} \textbf{e}_z$ (if the dimensions of the region are small compared with the distance $\ell$). This approximated value becomes exact if we take the limits $\ell \rightarrow \infty$ and $Q \rightarrow \infty$ maintaining the value of $\frac{Q}{\ell^2}$ constant.\\
+
+Considering some of our previous results, the system of the conducting sphere in the presence of the uniform electric field may be replaced, by the method of images, by the charges $\pm Q$ located at $z= \mp \ell$ together with the corresponding image charges $\mp \frac{R}{\ell} Q$ at $z=\mp \frac{R^2}{\ell}$ (see equations (\ref{ImageCharge01}) and (\ref{ImageChargePosition01})) and taking the appropriate limit. Therefore the resulting potential of the system is obtained from
+\begin{eqnarray}
+\Phi (\textbf{r}) &=& \frac{1}{4\pi \epsilon_0} \frac{Q}{\sqrt{r^2 + \ell^2 +2\ell r \cos \theta}}  - \frac{1}{4\pi \epsilon_0} \frac{Q}{\sqrt{r^2 + \ell^2 -2\ell r \cos \theta}} \notag \\ 
+& &- \frac{1}{4\pi \epsilon_0} \frac{Q R}{\ell \sqrt{r^2 + \left( \frac{R^2}{\ell} \right)^2 +2 \frac{R^2 r}{\ell} \cos \theta}} \notag \\
+& & + \frac{1}{4\pi \epsilon_0} \frac{QR}{\ell \sqrt{r^2 + \left( \frac{R^2}{\ell} \right)^2 -2 \frac{R^2 r}{\ell} \cos \theta}} .
+\end{eqnarray}
+
+Using the expansions for $\ell \gg 1$
+\begin{eqnarray}
+\frac{Q}{\sqrt{r^2 + \ell^2 \pm 2\ell r \cos \theta}} &=& \frac{Q}{\ell} \left(  1 + \left(\frac{r}{\ell} \right) ^2 \pm 2\frac{r}{\ell} \cos \theta \right)^{-1/2} \notag \\
+& = & \frac{Q}{\ell} \left(  1 -\frac{1}{2} \left(\frac{r}{\ell} \right) ^2 \mp \frac{r}{\ell} \cos \theta + \mathcal{O} \left( \left( \frac{r}{\ell} \right)^3 \right) \right)\notag \\
+& = & \frac{Q}{\ell} \mp \frac{Qr}{\ell^2} \cos \theta + \mathcal{O} \left( \left( \frac{r}{\ell} \right)^3 \right)
+\end{eqnarray}
+
+and 
+
+\begin{eqnarray}
+\frac{Q R}{\ell \sqrt{r^2 + \left( \frac{R^2}{\ell} \right)^2 \pm 2 \frac{R^2 r}{\ell} \cos \theta}} 
+&=& \frac{Q R}{\ell r \sqrt{1 + \left( \frac{R^2}{r} \frac{1}{\ell} \right)^2 \pm 2 \frac{R^2}{r} \frac{1}{\ell} \cos \theta}} \notag \\
+& = & \frac{Q R}{\ell r} \left( 1 - \frac{1}{2} \left( \frac{R^2}{r} \frac{1}{\ell} \right)^2 \mp \frac{R^2}{r} \frac{1}{\ell} \cos \theta + \mathcal{O} \left( \left( \frac{1}{\ell} \right)^3  \right) \right) \notag  \\
+& = & \frac{Q R}{\ell r}  \mp \frac{Q }{\ell ^2}  \frac{R^3}{r^2}  \cos \theta + \mathcal{O} \left( \left( \frac{1}{\ell} \right)^3  \right).
+\end{eqnarray}
+
+Taking the limits $\ell \rightarrow \infty$ and $Q \rightarrow \infty$, maintaining the value of $\frac{Q}{\ell}$ constant, gives the non-vanishing terms in the electrostatic potential 
+\begin{eqnarray}
+\Phi (\textbf{r}) &=& \frac{1}{4 \pi \epsilon_0} \left[   - 2  \frac{Qr}{\ell^2} \cos \theta + 2 \frac{Q }{\ell ^2}  \frac{R^3}{r^2}  \cos \theta  \right] + ...
+\end{eqnarray}
+
+Note that the considered  limit implies the constant value of the field $E_0 = \frac{2Q}{4\pi \epsilon_0 \ell ^2}$ and therefore we can write
+\begin{eqnarray}
+\Phi (\textbf{r}) &=&    - E_0 \left(  r +  \frac{R^3}{r^2} \right) \cos \theta .
+\end{eqnarray}
+
+Here we can identify the first term as the potential contribution of the external uniform field, 
+\begin{equation}
+\Phi_0 = -E_0 r \cos \theta = - E_0 z ,
+\end{equation}
+while the second term is the potential contribution due to the induced surface charge density on the sphere, i.e. due to the image charges,
+\begin{equation}
+\Phi_I =  E_0 \frac{R^3}{r^2} \cos \theta.
+\end{equation}
+
+The corresponding induced surface charge density on the sphere is given by
+\begin{equation}
+\sigma = -\epsilon_0 \left. \frac{\partial \Phi}{\partial r} \right|_{r=R} = \epsilon_0 E_0 \left. \frac{\partial}{\partial r} \left(  r +  \frac{R^3}{r^2} \right) \right|_{r=R}  \cos \theta =  \epsilon_0 E_0 \left. \left( 1 + 2\frac{R^3}{r^3} \right) \right|_{r=R} \cos \theta
+\end{equation}
+\begin{equation}
+\sigma =  3 \epsilon_0 E_0  \cos \theta .
+\end{equation}
+
+\section{Green Function for the Sphere}
+As seen from the previous examples, the Green function describing a sphere of radius $R$ and satisfying Dirichlet boundary conditions is
+\begin{equation}
+G(\textbf{r} , \textbf{r}') = \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} -  \frac{R}{r' \left| \textbf{r} -\frac{R^2}{r'^2} \textbf{r}' \right|}.
+\end{equation}
+
+Here $\textbf{r}'$ corresponds to the location of the point source and $\textbf{r}$ corresponds to the point at which the potential will be evaluated. Using spherical coordinates we write
+\begin{equation}
+\left| \textbf{r} - \textbf{r}' \right| = \sqrt{r^2 + r'^2 -2rr' \cos \gamma}
+\end{equation}
+and
+\begin{equation}
+\left| \textbf{r} -\frac{R^2}{r'^2} \textbf{r}' \right| = \sqrt{r^2 + \frac{R^4}{r'^2} - 2\frac{R^2}{r'} r \cos \gamma},
+\end{equation}
+where $\gamma$ is the angle between $\textbf{r}$ and $\textbf{r}'$. Then, Green' function becomes
+\begin{equation}
+G(\textbf{r} , \textbf{r}') = \frac{1}{\sqrt{r^2 + r'^2 -2rr' \cos \gamma}} -  \frac{R}{r'  \sqrt{r^2 + \frac{R^4}{r'^2} - 2\frac{R^2}{r'} r \cos \gamma}}
+\end{equation}
+\begin{equation}
+G(\textbf{r} , \textbf{r}') = \frac{1}{\sqrt{r^2 + r'^2 -2rr' \cos \gamma}} -  \frac{1}{\sqrt{\frac{r^2 r'^2}{R^2} + R^2 - 2rr'2 \cos \gamma}}.
+\end{equation}
+
+Note the symmetry of this relation in the variables $\textbf{r}$ and $\textbf{r}'$ and that $G=0$ if either $\textbf{r}=R$ or $\textbf{r}'=R$.\\
+
+In order to calculate the electrostatic potential we will use the general relation
+\begin{equation}
+ \Phi (\textbf{r}) = \frac{1}{4 \pi  \epsilon_0} \int_V \rho (\textbf{r}') G (\textbf{r}, \textbf{r}')  d^3x' -\frac{1}{4\pi} \oint_S   \Phi \frac{\partial G  (\textbf{r}, \textbf{r}')}{\partial n'}  da',
+\end{equation}
+so we need the derivative
+\begin{equation}
+\frac{\partial G  (\textbf{r}, \textbf{r}')}{\partial n'} = \boldsymbol{\nabla} G  (\textbf{r}, \textbf{r}') \cdot \textbf{n}'.
+\end{equation}
+
+Due to the symmetry of $G$ in the variables $\textbf{r}$ and $\textbf{r}'$, this derivative gives the same result as the surface charge density in equation (\ref{ConductingSphereChargeDensity}),
+\begin{equation}
+\left. \frac{\partial G  (\textbf{r}, \textbf{r}')}{\partial n'} \right|_{r'=R} = - \frac{1}{R^2 } \frac{R}{r} \frac{ \left(  1- \frac{ R^2}{r^2  }  \right) }{ \left( 1+ \left(\frac{R}{r}\right)^2 - 2 \frac{R}{r} \cos \gamma \right)^{3/2} }
+\end{equation}
+\begin{equation}
+\left. \frac{\partial G  (\textbf{r}, \textbf{r}')}{\partial n'} \right|_{r'=R} = - \frac{1}{R^2 } \frac{R}{r} \frac{ \left(  1- \frac{ R^2}{r^2  }  \right) }{ \frac{1}{r^3} \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} }
+\end{equation}
+\begin{equation}
+\left. \frac{\partial G  (\textbf{r}, \textbf{r}')}{\partial n'} \right|_{r'=R} = - \frac{r^2 }{R } \frac{ \left(  1- \frac{ R^2}{r^2  }  \right) }{  \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} }
+\end{equation}
+\begin{equation}
+\left. \frac{\partial G  (\textbf{r}, \textbf{r}')}{\partial n'} \right|_{r'=R} = -  \frac{ \left(  r^2- R^2 \right) }{ R \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} }.
+\end{equation}
+
+Replacing this result in the expression for the potential, we conclude that the solution of the Laplace equation \textit{outside} a sphere (where the density vanishes, $\rho = 0$ ), with the potential specified on its surface (Dirichlet boundary conditions) is simply
+\begin{equation}
+\Phi (\textbf{r}) = \frac{1}{4 \pi} \int \Phi (R, \theta ' \varphi ')  \frac{ \left(  r^2- R^2 \right) }{ R \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} } R^2 d \Omega ', \label{eq:SpherePotential}
+\end{equation}
+\begin{equation}
+\Phi (\textbf{r}) = \frac{1}{4 \pi} \int \Phi (R, \theta ' \varphi ')  \frac{R  \left(  r^2- R^2 \right) }{  \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} } d \Omega ', \label{eq:SpherePotential}
+\end{equation}
+where $d\Omega '$ is the element of solid angle at the point $(R, \theta ', \varphi ')$. The angle $\gamma$ is related with these angles through the relation
+\begin{equation}
+\cos \gamma = \cos \theta \cos \theta ' + \sin \theta  \sin \theta ' \cos (\varphi - \varphi ').
+\end{equation}
+
+\subsection{ Conducting Sphere with Hemispheres at Different Potentials}
+Consider a conducting sphere  of radius $R$, made up of two hemispherical shells separated by a small insulated ring. Consider that the insulating ring lies in the $z=0$ plane and that the upper hemisphere is kept at the potential $+ V_0$ while the lower hemisphere is kept at $- V_0$. Using equation (\ref{eq:SpherePotential}), the potential in the exterior of the conducting sphere is given by
+\begin{eqnarray}
+\Phi (r, \theta, \varphi ) &=& \frac{1}{4 \pi} \int_0^{2\pi} \int_0^1 V_0  \frac{ R \left(  r^2- R^2 \right) }{  \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} } d \varphi ' d(\cos \theta ')\notag \\ 
+& &+ \frac{1}{4 \pi} \int_0^{2\pi} \int_{-1}^0 (- V_0)  \frac{R \left(  r^2- R^2 \right) }{  \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} } d \varphi ' d(\cos \theta ') \notag
+\end{eqnarray}
+
+\begin{eqnarray}
+\Phi (r, \theta, \varphi ) &= \frac{V_0}{4 \pi}   & \int_0^{2\pi}  \left[ \int_0^1  \frac{ R \left(  r^2- R^2 \right) }{  \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} } d(\cos \theta ')\right. \notag \\ 
+& & \left. -\int_{-1}^0   \frac{ R \left(  r^2- R^2 \right) }{  \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} }  d(\cos \theta ') \right] d \varphi ' \notag .
+\end{eqnarray}
+
+Making the change of variables in the second integral,
+\begin{eqnarray}
+\theta ' & \rightarrow & \pi - \theta ' \notag \\
+\varphi ' & \rightarrow &  \varphi ' + \pi \notag
+\end{eqnarray}
+we have
+\begin{eqnarray}
+\cos \theta ' & \rightarrow & \cos (\pi - \theta ') = \cos \pi \cos \theta ' + \sin \pi \sin \theta' = -\cos \theta ' \notag \\
+\sin \theta ' & \rightarrow & \sin (\pi - \theta ') = \sin \pi \cos \theta ' - \cos \pi \sin \theta' =  \sin \theta ' \notag \\
+ \cos (\varphi - \varphi ' ) & \rightarrow &  \cos (\varphi - \varphi ' + \pi) = \cos (\varphi - \varphi ' ) \cos (\pi) - \sin (\varphi - \varphi ' ) \sin \pi = -\cos (\varphi - \varphi ' ) \notag
+\end{eqnarray}
+and
+\begin{eqnarray}
+\cos \gamma & \rightarrow & \cos \theta \cos (\pi -\theta ') + \sin \theta  \sin (\pi -\theta ' ) \cos (\varphi - \varphi ' - \pi)
+\cos \gamma \notag \\
+& & = - \cos \theta \cos \theta ' - \sin \theta  \sin \theta ' \cos (\varphi - \varphi ') \notag \\
+&& = - \cos \gamma \notag
+\end{eqnarray}
+
+Therefore, under these coordinate transformations the potential becomes
+\begin{eqnarray}
+\Phi (r, \theta, \varphi ) &= \frac{V_0}{4 \pi}   & \int_0^{2\pi}  \left[ \int_0^1   \frac{ R \left(  r^2- R^2 \right) }{  \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{3/2} } d(\cos \theta ')\right. \notag \\ 
+& & \left. -\int_{1}^0   \frac{ R \left(  r^2- R^2 \right) }{  \left( r^2+ R^2+ 2 Rr \cos \gamma \right)^{3/2} }  d(-\cos \theta ') \right] d \varphi ' \notag 
+\end{eqnarray}
+
+\begin{eqnarray}
+\Phi (r, \theta, \varphi ) &= \frac{V_0 R \left(  r^2- R^2 \right)}{4 \pi}   & \int_0^{2\pi}  \left[ \int_0^1   \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{-3/2}  d(\cos \theta ')\right. \notag \\ 
+& & \left. -\int_{0}^1  \left( r^2+ R^2+ 2 Rr \cos \gamma \right)^{-3/2}  d(\cos \theta ') \right] d \varphi ' \notag 
+\end{eqnarray}
+
+\begin{eqnarray}
+\Phi (r, \theta, \varphi ) &= \frac{V_0 R \left(  r^2- R^2 \right)}{4 \pi}   & \int_0^{2\pi}  \int_0^1   \left[ \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{-3/2}  \right. \notag \\ 
+& & \left. -  \left( r^2+ R^2+ 2 Rr \cos \gamma \right)^{-3/2}  \right]d(\cos \theta ')  d \varphi ' \notag .
+\end{eqnarray}
+
+The complex dependence of the angle $\gamma$ on $\theta '$ and $\varphi '$ makes the integral impossible in closed form. However some special cases can studied. For example, the electrostatic potential along the $z$ axis ($\theta = 0$  and $r=z$) gives the simple relation $\cos \gamma = \cos \theta '$ and the integral becomes
+\begin{eqnarray}
+\Phi (z ) &= \frac{V_0 R \left(  z^2- R^2 \right)}{4 \pi}   & \int_0^{2\pi}  \int_0^1   \left[ \left( z^2+ R^2- 2 Rz \cos \theta ' \right)^{-3/2}  \right. \notag \\ 
+& & \left. -  \left( z^2+ R^2+ 2 Rz \cos \theta' \right)^{-3/2}  \right]d(\cos \theta ')  d \varphi ' \notag 
+\end{eqnarray}
+\begin{eqnarray}
+\Phi (z ) &= \frac{V_0 R \left(  z^2- R^2 \right)}{2}   &   \int_0^1   \left[ \left( z^2+ R^2- 2 Rz \cos \theta ' \right)^{-3/2}  \right. \notag \\ 
+& & \left. -  \left( z^2+ R^2+ 2 Rz \cos \theta' \right)^{-3/2}  \right]d(\cos \theta ') \notag .
+\end{eqnarray}
+
+Note that
+\begin{eqnarray}
+\int_0^1   \left( z^2+ R^2- 2 Rz \cos \theta ' \right)^{-3/2}  d(\cos \theta ') &=& \int_{z^2 + R^2}^{z^2 + R^2 - 2Rz} \alpha^{-3/2} \frac{d\alpha }{-2Rz} \notag \\
+&=& -\frac{1}{2Rz}  \left. (-2\alpha^{-1/2} ) \right|_{z^2 + R^2}^{z^2 + R^2 - 2Rz}  \notag \\
+&=& \frac{1}{Rz} \left[ (z^2 + R^2 - 2Rz)^{-1/2} - (z^2 + R^2)^{-1/2}  \right]  \notag \\
+&=& \frac{1}{Rz} \left[ ((z-R)^2)^{-1/2} - (z^2 + R^2)^{-1/2}  \right] \notag \\
+&=& \frac{1}{Rz} \left[ (z-R)^{-1} - (z^2 + R^2)^{-1/2}  \right] \notag
+\end{eqnarray}
+and 
+\begin{eqnarray}
+\int_0^1   \left( z^2+ R^2 + 2 Rz \cos \theta ' \right)^{-3/2}  d(\cos \theta ') &=& \int_{z^2 + R^2}^{z^2 + R^2 + 2Rz} \alpha^{-3/2} \frac{d\alpha }{2Rz} \notag \\
+&=& \frac{1}{2Rz}  \left. (-2\alpha^{-1/2} ) \right|_{z^2 + R^2}^{z^2 + R^2 + 2Rz}  \notag \\
+&=& \frac{1}{Rz} \left[ (z^2 + R^2)^{-1/2} -(z^2 + R^2 + 2Rz)^{-1/2} \right]  \notag \\
+&=& \frac{1}{Rz} \left[ (z^2 + R^2)^{-1/2} -((z+R)^2)^{-1/2} \right]  \notag \\
+&=& \frac{1}{Rz} \left[ (z^2 + R^2)^{-1/2} -(z+R)^{-1} \right] . \notag 
+\end{eqnarray}
+
+Thus, the potential gives
+\begin{equation}
+\Phi (z) = \frac{V_0 R \left(  z^2- R^2 \right)}{2}     \frac{1}{Rz}   \left[ (z-R)^{-1} - (z^2 + R^2)^{-1/2}  -  (z^2 + R^2)^{-1/2} +(z+R)^{-1} \right]  
+\end{equation}
+\begin{equation}
+\Phi (z) = \frac{V_0  \left(  z^2- R^2 \right)}{2z}    \left[ \frac{1}{z-R} + \frac{1}{z+R} - \frac{2}{\sqrt{z^2 + R^2}} \right] 
+\end{equation}
+\begin{equation}
+\Phi (z ) = \frac{V_0  \left(  z^2- R^2 \right)}{2z}  \left[ \frac{2z}{z^2-R^2} - \frac{2}{\sqrt{z^2 + R^2} } \right] 
+\end{equation}
+\begin{equation}
+\Phi (z ) = V_0 \left[ 1 - \frac{z^2-R^2}{z\sqrt{z^2 + R^2} } \right].
+\end{equation}
+
+Note that evaluating this equation at $z=R$ gives $\Phi(z=R)= V_0$ as needed and taking the limit $z \gg R$ gives the asymptotic value 
+\begin{equation}
+\Phi = V_0 \left[ 1 - \frac{z^2 \left(1- \left( \frac{R}{z} \right)^2 \right) }{z^2 \sqrt{1 + \left( \frac{R}{z} \right)^2} } \right]  
+\end{equation}
+\begin{equation}
+\Phi = V_0 \left[ 1 -  \left(1- \left( \frac{R}{z} \right)^2 \right) \left( 1 + \left( \frac{R}{z} \right)^2 \right)^{-1/2} \right]  
+\end{equation}
+\begin{equation}
+\Phi \approx V_0 \left[ 1 -  \left(1- \left( \frac{R}{z} \right)^2 \right) \left( 1 - \frac{1}{2}\left( \frac{R}{z} \right)^2 + ... \right) \right]  
+\end{equation}
+\begin{equation}
+\Phi \approx V_0 \left[ 1 -  \left(1- \left( \frac{R}{z} \right)^2 - \frac{1}{2}\left( \frac{R}{z} \right)^2 + ... \right) \right]  
+\end{equation}
+\begin{equation}
+\Phi \approx V_0  \frac{3}{2}\left( \frac{R}{z} \right)^2 
+\end{equation}
 
 
 
