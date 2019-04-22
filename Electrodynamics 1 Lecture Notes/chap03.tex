@@ -337,7 +337,7 @@ Therefore, under these coordinate transformations the potential becomes
 
 \begin{eqnarray}
 \Phi (r, \theta, \varphi ) &= \frac{V_0 R \left(  r^2- R^2 \right)}{4 \pi}   & \int_0^{2\pi}  \int_0^1   \left[ \left( r^2+ R^2- 2 Rr \cos \gamma \right)^{-3/2}  \right. \notag \\ 
-& & \left. -  \left( r^2+ R^2+ 2 Rr \cos \gamma \right)^{-3/2}  \right]d(\cos \theta ')  d \varphi ' \notag .
+& & \left. -  \left( r^2+ R^2+ 2 Rr \cos \gamma \right)^{-3/2}  \right]d(\cos \theta ')  d \varphi ' . \label{eq:GenerealSpherePotential}
 \end{eqnarray}
 
 The complex dependence of the angle $\gamma$ on $\theta '$ and $\varphi '$ makes the integral impossible in closed form. However some special cases can studied. For example, the electrostatic potential along the $z$ axis ($\theta = 0$  and $r=z$) gives the simple relation $\cos \gamma = \cos \theta '$ and the integral becomes
@@ -395,11 +395,49 @@ Note that evaluating this equation at $z=R$ gives $\Phi(z=R)= V_0$ as needed and
 \Phi \approx V_0 \left[ 1 -  \left(1- \left( \frac{R}{z} \right)^2 - \frac{1}{2}\left( \frac{R}{z} \right)^2 + ... \right) \right]  
 \end{equation}
 \begin{equation}
-\Phi \approx V_0  \frac{3}{2}\left( \frac{R}{z} \right)^2 
+\Phi \approx V_0  \frac{3}{2}\left( \frac{R}{z} \right)^2 .
 \end{equation}
 
+\subsubsection{Integration}
 
+Equation (\ref{eq:GenerealSpherePotential}) can be expanded in power series to be integrated. Factorization gives
+\begin{eqnarray}
+\Phi (r, \theta, \varphi ) &= \frac{V_0 R \left(  r^2- R^2 \right)}{4 \pi (r^2 + R^2)^{3/2}}   & \int_0^{2\pi}  \int_0^1   \left[ \left( 1- 2 \alpha \cos \gamma \right)^{-3/2}  \right. \notag \\ 
+& & \left. -  \left(1+ 2 \alpha \cos \gamma \right)^{-3/2}  \right]d(\cos \theta ')  d \varphi ' 
+\end{eqnarray}
+where $\alpha = \frac{Rr}{r^2 + R^2}$. The expansion of the radical terms are
+\begin{eqnarray}
+\left( 1- 2 \alpha \cos \gamma \right)^{-3/2} &=& 1 + \frac{3}{2} 2 \alpha \cos \gamma - \frac{1}{2!} \frac{3}{2} \frac{5}{2} (2 \alpha \cos \gamma)^2 + \frac{1}{3!} \frac{3}{2} \frac{5}{2} \frac{7}{2} (2 \alpha \cos \gamma)^3 - ... \notag \\
+&=& 1 + 3 \alpha \cos \gamma -  \frac{15}{2}  \alpha ^2 \cos ^2  \gamma  +   \frac{35}{2}  \alpha ^3 \cos ^3 \gamma - ...
+\end{eqnarray}
+and
+\begin{eqnarray}
+\left( 1+ 2 \alpha \cos \gamma \right)^{-3/2} &=& 1 - \frac{3}{2} 2 \alpha \cos \gamma + \frac{1}{2!} \frac{3}{2} \frac{5}{2} (2 \alpha \cos \gamma)^2 - \frac{1}{3!} \frac{3}{2} \frac{5}{2} \frac{7}{2} (2 \alpha \cos \gamma)^3 + ... \notag \\
+&=& 1 - 3 \alpha \cos \gamma +  \frac{15}{2}  \alpha ^2 \cos ^2  \gamma  -   \frac{35}{2}  \alpha ^3 \cos ^3 \gamma + ...
+\end{eqnarray}
 
+Then, the integrand in the potential expands only in odd powers terms,
+\begin{equation}
+\left[ \left( 1- 2 \alpha \cos \gamma \right)^{-3/2} -  \left(1+ 2 \alpha \cos \gamma \right)^{-3/2}  \right] =  6 \alpha \cos \gamma  + 35  \alpha ^3 \cos ^3 \gamma + ... . 
+\end{equation}
+
+Integration of these odd powers in the solid angle can be done easily,
+\begin{eqnarray}
+\int_0^{2\pi} \int_0^1 \cos \gamma d(\cos \theta ') d\varphi ' &=& \pi \cos \theta \\
+\int_0^{2\pi} \int_0^1 \cos ^3 \gamma d(\cos \theta ') d\varphi ' &=& \frac{\pi}{4} \cos \theta \left( 3 - \cos ^2 \theta \right)\\
+\cdots &=& \cdots \notag
+\end{eqnarray}
+
+These results let us write the general potential for the sphere as the expansion
+\begin{equation}
+\Phi (r, \theta, \varphi ) = \frac{V_0 R \left(  r^2- R^2 \right)}{4 \pi (r^2 + R^2)^{3/2}} \left[ 6 \alpha  \pi \cos \theta + 35  \alpha ^3 \frac{\pi}{4} \cos \theta \left( 3 - \cos ^2 \theta \right) + ... \right]
+\end{equation}
+\begin{equation}
+\Phi (r, \theta, \varphi ) = \frac{3V_0 R \left(  r^2- R^2 \right)}{2 (r^2 + R^2)^{3/2}}  \alpha \cos \theta \left[  1 +  \frac{35}{24}  \alpha ^2 \left( 3 - \cos ^2 \theta \right) + ... \right]
+\end{equation}
+\begin{equation}
+\Phi (r, \theta, \varphi ) = \frac{3V_0 R^2}{2 r^2}  \frac{r^3  \left(  r^2- R^2 \right)}{(r^2 + R^2)^{5/2}} \cos \theta \left[  1 +  \frac{35}{24}  \frac{R^2 r^2}{(r^2 - R^2)^2} \left( 3 - \cos ^2 \theta \right) + ... \right]
+\end{equation}
 
 Hence, the laplacian in spherical coordinates is written
 \begin{equation}
