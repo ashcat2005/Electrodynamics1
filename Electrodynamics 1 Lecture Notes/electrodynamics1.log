@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 APR 2019 07:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 APR 2019 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,7 +360,27 @@ Overfull \hbox (13.6589pt too wide) in alignment at lines 414--417
  [][][] []
  []
 
-[34]) [35] (./electrodynamics1.aux)
+[34] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
+
+ []
+
+[36] [37]
+Overfull \hbox (8.6979pt too wide) in paragraph at lines 556--556
+[]\OT1/cmr/bx/n/14.4 Laplace Equa-tion in Rect-an-gu-lar Co-or-di-nates 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 599--604
+
+ []
+
+) [39] (./electrodynamics1.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -393,10 +413,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on electrodynamics1.pdf (35 pages, 325577 bytes).
+Output written on electrodynamics1.pdf (39 pages, 345883 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
+ 212 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
