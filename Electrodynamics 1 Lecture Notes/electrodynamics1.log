@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 APR 2019 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  6 MAY 2019 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -303,96 +303,113 @@ ONDITIONS \OT1/cmr/m/n/10 21
 ]
 Chapter 3.
 [23] [24] [25] [26]
-Overfull \hbox (2.42917pt too wide) in paragraph at lines 165--165
+Overfull \hbox (2.42917pt too wide) in paragraph at lines 171--171
 []\OT1/cmr/bx/n/12 Point Charge in the Pres-ence of a Con-duct-ing Sphere
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
 
-Underfull \vbox (badness 3088) has occurred while \output is active []
+Underfull \vbox (badness 1009) has occurred while \output is active []
 
  [28]
-Overfull \hbox (27.1037pt too wide) in alignment at lines 203--208
+Overfull \hbox (27.1037pt too wide) in alignment at lines 209--214
  [][][] []
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-[30]
-Overfull \hbox (47.4543pt too wide) in alignment at lines 314--318
- [][][] []
- []
-
-[31]
-Overfull \hbox (44.084pt too wide) in alignment at lines 354--360
+[30] [31]
+Overfull \hbox (47.4543pt too wide) in alignment at lines 320--324
  [][][] []
  []
 
 [32]
-Overfull \hbox (44.084pt too wide) in alignment at lines 362--368
+Overfull \hbox (44.084pt too wide) in alignment at lines 360--366
  [][][] []
  []
 
 
-Overfull \hbox (24.63667pt too wide) detected at line 373
+Overfull \hbox (44.084pt too wide) in alignment at lines 368--374
+ [][][] []
+ []
+
+
+Overfull \hbox (24.63667pt too wide) detected at line 379
 \OT1/cmr/m/n/10 ^^H(\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = [][] []
  []
 
 [33]
-Overfull \hbox (13.6589pt too wide) in alignment at lines 409--412
+Overfull \hbox (13.6589pt too wide) in alignment at lines 415--418
  [][][] []
  []
 
 
-Overfull \hbox (13.6589pt too wide) in alignment at lines 414--417
+Overfull \hbox (13.6589pt too wide) in alignment at lines 420--423
  [][][] []
  []
 
-[34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 488--490
+[34] [35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 494--496
 
  []
 
-[36] [37]
-Overfull \hbox (8.6979pt too wide) in paragraph at lines 556--556
+[37]
+Overfull \hbox (8.6979pt too wide) in paragraph at lines 562--562
 []\OT1/cmr/bx/n/14.4 Laplace Equa-tion in Rect-an-gu-lar Co-or-di-nates 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
-
- []
-
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 599--604
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
-) [39] (./electrodynamics1.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--610
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 667--670
+
+ []
+
+[40] [41]
+Overfull \hbox (29.81244pt too wide) detected at line 731
+\OT1/cmr/m/n/10 ^^H(\OML/cmm/m/it/10 ^^Z; ^^^\OT1/cmr/m/n/10 ) = [] [] + [] [] 
+[] \OML/cmm/m/it/10 :
+ []
+
+
+Overfull \hbox (17.86188pt too wide) detected at line 738
+\OT1/cmr/m/n/10 ^^H(\OML/cmm/m/it/10 ^^Z; ^^^\OT1/cmr/m/n/10 ) = [] [] + [] [] 
+[] \OML/cmm/m/it/10 :
+ []
+
+[42]) [43] (./electrodynamics1.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2439 strings out of 492649
- 32608 string characters out of 6129622
- 104588 words of memory out of 5000000
- 6272 multiletter control sequences out of 15000+600000
+ 2441 strings out of 492649
+ 32656 string characters out of 6129622
+ 105614 words of memory out of 5000000
+ 6274 multiletter control sequences out of 15000+600000
  16262 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,25p,831b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,25p,831b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
 b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
@@ -413,10 +430,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on electrodynamics1.pdf (39 pages, 345883 bytes).
+Output written on electrodynamics1.pdf (43 pages, 359722 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
+ 225 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
