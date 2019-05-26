@@ -1,6 +1,537 @@
 \chapter{Boundary Value Problems in Electrostatics II} 
 
-Hence, the laplacian in spherical coordinates is written
+\section{Laplace Equation in Spherical Coordinates}
+The Laplace equation in spherical coordinates $(r, \theta, \phi)$ is written
 \begin{equation}
-\nabla^2 \Phi = \frac{1}{r^2}\frac{\partial}{\partial r} \left( r^2 \frac{\partial \Phi}{\partial r} \right) + \frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial \Phi}{\partial \theta} \right)+ \frac{1}{r^2 \sin^2 \theta} \frac{\partial ^2 \Phi}{\partial \varphi ^2} 
+\nabla^2 \Phi = \frac{1}{r} \frac{\partial^2}{\partial r^2} \left( r \Phi \right) + \frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial \Phi}{\partial \theta} \right)+ \frac{1}{r^2 \sin^2 \theta} \frac{\partial ^2 \Phi}{\partial \phi ^2} = 0.
+\end{equation}
+
+Considering the separation in the potential function
+\begin{equation}
+\Phi(r, \theta, \phi) = \frac{U(r)}{r} P (\theta) \Psi (\phi),
+\end{equation}
+Laplace equation becomes
+\begin{equation}
+P \Psi \frac{d^2 U}{dr^2} + \frac{U\Psi}{r^2 \sin \theta} \frac{d}{d\theta} \left( \sin \theta \frac{dP}{d\theta} \right) + \frac{UP}{r^2 \sin^2 \theta} \frac{d^2 \Psi}{d\phi^2} = 0
+\end{equation}
+\begin{equation}
+r^2 \sin^2 \theta \left[ \frac{1}{U} \frac{d^2 U}{dr^2} + \frac{1}{P r^2 \sin \theta} \frac{d}{d\theta} \left( \sin \theta \frac{dP}{d\theta} \right)\right] + \frac{1}{\Psi} \frac{d^2 \Psi}{d\phi^2} = 0.
+\end{equation}
+
+Naming the separation constant for the $\phi$ therm as $-m^2$ gives the equation
+\begin{equation}
+ \frac{1}{\Psi} \frac{d^2 \Psi}{d\phi^2} = -m^2
+\end{equation}
+and therefore
+\begin{equation}
+\Psi = e^{\pm im\phi}.
+\end{equation}
+
+If the range of the azimuthal variable is $0\leq \phi < 2\pi$, the constant $m$ must be an integer in order to have a single valued function $\Psi$. On the other hand we have 
+\begin{equation}
+r^2 \sin^2 \theta \left[ \frac{1}{U} \frac{d^2 U}{dr^2} + \frac{1}{P r^2 \sin \theta} \frac{d}{d\theta} \left( \sin \theta \frac{dP}{d\theta} \right)\right] = m^2
+\end{equation}
+\begin{equation}
+r^2 \frac{1}{U} \frac{d^2 U}{dr^2} + \frac{1}{P \sin \theta} \frac{d}{d\theta} \left( \sin \theta \frac{dP}{d\theta} \right) = \frac{m^2}{\sin^2 \theta}
+\end{equation}
+\begin{equation}
+r^2 \frac{1}{U} \frac{d^2 U}{dr^2} = - \frac{1}{P \sin \theta} \frac{d}{d\theta} \left( \sin \theta \frac{dP}{d\theta} \right) + \frac{m^2}{\sin^2 \theta}
+\end{equation}
+Introducing the constant $l(l+1)$ to separate the functions $U$ and $P$ gives the equations
+\begin{eqnarray}
+r^2 \frac{1}{U} \frac{d^2 U}{dr^2} &=& l(l+1)  \\
+\frac{1}{P \sin \theta} \frac{d}{d\theta} \left( \sin \theta \frac{dP}{d\theta} \right) - \frac{m^2}{\sin^2 \theta} &=& -l(l+1) 
+\end{eqnarray}
+or 
+\begin{eqnarray}
+ \frac{d^2 U}{dr^2} - \frac{l(l+1)}{r^2} U &=& 0  \\
+\frac{1}{ \sin \theta} \frac{d}{d\theta} \left( \sin \theta \frac{dP}{d\theta} \right) + \left[l(l+1)  - \frac{m^2}{\sin^2 \theta} \right] P &=& 0.
+\end{eqnarray}
+
+The radial equation is integrated to obtain
+\begin{equation}
+U = A r^{l+1} + Br^{-l}.
+\end{equation}
+The equation for $P(\theta)$ is usually rewritten in terms of the variable $x=\cos \theta$. We have that $\frac{d}{dtheta} = \frac{dx}{d\theta} \frac{d}{dx} = -\sin \theta \frac{d}{dx}$ and then 
+\begin{equation}
+\frac{\sin \theta}{ \sin \theta} \frac{d}{dx} \left( \sin^2 \theta \frac{dP}{dx} \right) + \left[l(l+1)  - \frac{m^2}{\sin^2 \theta} \right] P = 0.
+\end{equation}
+\begin{equation}
+ \frac{d}{dx} \left[ (1-x^2)  \frac{dP}{dx} \right] + \left[l(l+1)  - \frac{m^2}{1-x^2} \right] P = 0. \label{eq:generalizedLegendreEq}
+\end{equation}
+This equation is called the \textit{generalized Legendre equation} and now we will present its solutions.
+
+\section{Legendre Equation with Azimuthal Symmetry}
+\subsection{$m=0$ and the Legendre Polynomials}
+In order to obtain the solution of equation (\ref{eq:generalizedLegendreEq}) we will consider first the particular case $m=0$,
+\begin{equation}
+ \frac{d}{dx} \left[ (1-x^2)  \frac{dP}{dx} \right] + l(l+1)  P = 0, \label{eq:differentialLegendreEq}
+ \end{equation} 
+ called the ordinary Legendre differential equation. In order to give a physical reasonable electrostatic potential, the solution of this equation must be a single valued, finite and continuous function in the range $-1 \leq x \leq 1$ (because $x=\cos \theta$).  To obtain this solution, consider a power series representation,
+ \begin{equation}
+ P (x) = x^\alpha \sum_{j=0}^\infty a_j x^j,
+ \end{equation}
+ with $\alpha$ an unknown parameter to be determined. Direct substitution gives
+ \begin{equation}
+  \frac{d}{dx} \left[ (1-x^2)    \sum_{j=0}^\infty a_j  (\alpha + j) x^{\alpha + j-1}  \right] + l(l+1)\sum_{j=0}^\infty a_j  x^{\alpha+ j}  = 0
+ \end{equation} 
+  \begin{equation}
+  \frac{d}{dx} \left[  \sum_{j=0}^\infty a_j  (\alpha + j) x^{\alpha + j-1} -  \sum_{j=0}^\infty a_j  (\alpha + j) x^{\alpha + j+1}  \right] + l(l+1)\sum_{j=0}^\infty a_j  x^{\alpha+ j}  = 0 
+ \end{equation}
+\begin{equation}
+ \sum_{j=0}^\infty a_j  (\alpha + j)(\alpha + j-1) x^{\alpha + j-2} -  \sum_{j=0}^\infty a_j  (\alpha + j)(\alpha + j+1) x^{\alpha + j}   + l(l+1)\sum_{j=0}^\infty a_j  x^{\alpha+ j}  = 0
+ \end{equation}  
+ \begin{equation}
+ \sum_{j=0}^\infty a_j  \left\lbrace(\alpha + j)(\alpha + j-1) x^{ \alpha+ j-2} - \left[ (\alpha + j)(\alpha + j+1) - l(l+1) \right] x^{\alpha+ j }  \right\rbrace= 0
+ \end{equation}
+  \begin{equation}
+ x^\alpha \sum_{j=0}^\infty a_j  \left\lbrace(\alpha + j)(\alpha + j-1) x^{ j-2} - \left[ (\alpha + j)(\alpha + j+1) - l(l+1) \right] x^{ j }  \right\rbrace = 0. 
+ \end{equation}
+ 
+Writting explicitly the first terms in this equation gives
+\begin{eqnarray}
+ x^\alpha a_0 \left\lbrace  \alpha(\alpha -1) x^{-2} - \left[ \alpha (\alpha +1) - l(l+1) \right] \right\rbrace & & \notag \\
+ +x^\alpha a_1\left\lbrace   (\alpha + 1)\alpha  x^{ -1} - \left[ (\alpha + 1)(\alpha + 2) - l(l+1) \right] x \right\rbrace & &\notag \\
+ +x^\alpha \sum_{j=2}^\infty a_j  \left\lbrace(\alpha + j)(\alpha + j-1) x^{ j-2} - \left[ (\alpha + j)(\alpha + j+1) - l(l+1) \right] x^{ j }  \right\rbrace &=& 0 \notag.
+\end{eqnarray}
+
+Since this equation states that the coefficient  of each power of $x$ must vanish separately, we begin considering the first term. There, the coefficient with the factor $x^{-2}$ must vanish, and therefore
+\begin{equation}
+\alpha(\alpha-1) = 0 \text{ if } a_0 \neq 0. \label{eq:alphaCondition1}
+\end{equation}
+
+Similarly, from the second term in the expansion,  the coefficient with the factor $x^{-1}$ must vanish, and therefore
+\begin{equation}
+(\alpha+1)\alpha = 0 \text{ if } a_1 \neq 0. \label{eq:alphaCondition2}
+\end{equation}
+The vanishing of these terms leave us with 
+\begin{eqnarray}
+ -x^\alpha a_0 \left[ \alpha (\alpha +1) - l(l+1) \right]  -x^\alpha a_1 \left[ (\alpha + 1)(\alpha + 2) - l(l+1) \right] x  & &\notag \\
+ +x^\alpha \sum_{j=2}^\infty a_j  \left\lbrace(\alpha + j)(\alpha + j-1) x^{ j-2} - \left[ (\alpha + j)(\alpha + j+1) - l(l+1) \right] x^{ j }  \right\rbrace &=& 0 \notag.
+\end{eqnarray}
+
+Following the same idea, the coefficient of $x^0$ must vanish,
+\begin{equation}
+- a_0 \left[ \alpha (\alpha +1) - l(l+1) \right] +a_2  (\alpha + 2)(\alpha + 2-1) = 0
+ \end{equation} 
+or 
+\begin{equation}
+ a_2  =  \left[\frac{ \alpha (\alpha +1) - l(l+1)}{ (\alpha + 2)(\alpha + 2-1)  } \right] a_0.
+ \end{equation}  
+ 
+ Similarly, the coefficient of $x^1$ gives
+ \begin{equation}
+- a_1 \left[ (\alpha + 1)(\alpha + 2) - l(l+1) \right] + a_3  (\alpha + 3)(\alpha + 3-1) = 0
+ \end{equation} 
+or 
+\begin{equation}
+ a_3  =  \left[\frac{ (\alpha + 1)(\alpha + 2) - l(l+1) }{ (\alpha + 3)(\alpha + 3-1)  } \right] a_1.
+ \end{equation} 
+
+In general, the condition for the vanishing of the coefficient of $x^j$ gives the condition
+\begin{equation}
+ a_{j+2}  =  \left[\frac{ (\alpha + j)(\alpha + j+1) - l(l+1) }{ (\alpha + j+1)(\alpha + j+2)  } \right] a_j.\label{eq:coefficientCondition}
+ \end{equation} 
+ 
+Conditions (\ref{eq:alphaCondition1}) and (\ref{eq:alphaCondition2}) are equivalent, and therefore it is sufficient to choose either $a_0$ or $a_1$ different from zero, but not both. We will choose $a_1=0$ together with $a_0 \neq 0$ and  thus $\alpha=0$ or $\alpha = 1$. \\
+
+The series with $\alpha=0$ gives
+\begin{equation}
+ P (x) = x^0 \sum_{j=0}^\infty a_j x^j = \sum_{j=0}^\infty a_j x^j 
+\end{equation}
+with
+\begin{equation}
+ a_{j+2}  =  \left[\frac{ j( j+1) - l(l+1) }{ (j+1)( j+2)  } \right] a_j, \label{eq:evenCoeff}
+\end{equation} 
+due to equation (\ref{eq:coefficientCondition}). Note that only even powers of $x$ exist in this series.\\
+
+On the other hand, the series with $\alpha=1$ gives
+\begin{equation}
+ P (x) = x^1 \sum_{j=0}^\infty a_j x^j = \sum_{j=0}^\infty a_j x^{j+1} 
+\end{equation}
+with 
+\begin{equation}
+ a_{j+2}  =  \left[\frac{ (j+1)( j+2) - l(l+1) }{ ( j+2)(j+3)  } \right] a_j \label{eq:oddCoeff}
+ \end{equation} 
+and then, only odd powers of $x$ exist in this case. \\
+
+Both of these series converge for $x^2 <1$, regardless of the value of $l$ but they diverge ar $x=\pm1$, unless it terminates. From recursion (\ref{eq:coefficientCondition}), where $\alpha$ and $j$ are zero or positive integers, it is possible to see that the series terminate only if $l$ is zero or a positive integer. In fact, if $l$ is even (odd), only the series with $\alpha=0$ ($\alpha = 1$) terminates. Since the convergence of the series depends on $l$, we define the \textit{Legendre Polynomials} or order $l$ as the corresponding converging function $P_l (x)$.  Some of the polynomials are given by:\\
+
+For $l=0$, the $\alpha=0$ terminates and gives
+\begin{equation}
+ P_0(x) = \sum_{j=0}^\infty a_j x^j = a_0 + a_2 x^2 + a_4 x^4 + ... 
+\end{equation}
+However, note that using (\ref{eq:evenCoeff}) the second coefficient is
+\begin{equation}
+ a_{2}  =  \left[\frac{ 0( 0+1) }{ (0+1)( 0+2)  } \right] a_0 = 0,
+\end{equation} 
+and therefore, only the first term in the series survives. Choosing $a_0 = 1$ this polynomial is
+\begin{equation}
+ P_0 (x) = 1.
+ \end{equation} 
+ 
+ For $l=1$, the $\alpha=1$ terminates,
+ \begin{equation}
+ P_1(x) = \sum_{j=0}^\infty a_j x^{j+1} = a_0 x + a_2 x^3 + a_4 x^5 + ... 
+\end{equation}
+However, note that using (\ref{eq:oddCoeff}) the second coefficient is
+\begin{equation}
+ a_{2}  =  \left[\frac{ (0+1)(0+2) - 1(1+1) }{ ( 0+2)(0+3)  } \right] a_0= 0,
+\end{equation} 
+and therefore, only the first term in the series survives. Choosing $a_0 = 1$ to ensure a normalization such that the polynomial has the value $+1$ at $x=+1$ gives
+\begin{equation}
+ P_1 (x) = x.
+ \end{equation} 
+
+For $l=2$, the $\alpha=0$ terminates and gives
+\begin{equation}
+ P_2(x) = \sum_{j=0}^\infty a_j x^j = a_0 + a_2 x^2 + a_4 x^4 + ... 
+\end{equation}
+This time, the second coefficient is
+\begin{equation}
+ a_{2}  =  \left[\frac{ 0( 0+1) - 2(2+1) }{ (0+1)( 0+2)  } \right] a_0 = -3a_0,
+\end{equation} 
+while the third coefficient is 
+\begin{equation}
+ a_{4}  =  \left[\frac{ 2( 2+1) - 2(2+1) }{ (2+1)( 2+2)  } \right] a_2 = 0,
+\end{equation}
+and therefore the polynomial have just two terms,
+\begin{equation}
+ P_2(x) = a_0 - 3a_0 x^2 = a_0 (1-3x^2).
+\end{equation}
+In order  to ensure the normalization such that the polynomial has the value $+1$ at $x=+1$, we choose $a_0 = -\frac{1}{2}$, giving 
+\begin{equation}
+P_2 (x) = \frac{1}{2} (3x^2 -1).
+\end{equation}
+
+Following this procedure we can find  all the polynomials,
+\begin{eqnarray}
+P_3(x) &=& \frac{1}{2} (5x^3 - 3x)\\
+P_4(x) &=& \frac{1}{8} (35x^4 - 30x^2 + 3)\\
+\cdots & & \notag
+\end{eqnarray}
+
+From this power series it is possible to show that a compact representation of Legendre polynomials is given by Rodrigues' formula,
+\begin{equation}
+P_l (x) = \frac{1}{2^l l!} \frac{d^l}{dx^l} (x^2 - 1)^l.
+\end{equation}
+
+\subsubsection{Orthogonality of the Legendre Polynomials}
+
+Legendre polynomials form a set of complete orthonormal set of functions on the interval $-1 \le x \le 1$. Orthogonality is probed as follow: consider equation (\ref{eq:differentialLegendreEq})
+\begin{equation}
+\frac{d}{dx} \left[ (1-x^2)  \frac{dP_l}{dx} \right] + l(l+1)  P_l (x) = 0,
+\end{equation}
+multiply by $P_{l'} (x)$ and integrate,
+\begin{equation}
+\int_{-1}^{1} P_{l'} (x) \left\lbrace \frac{d}{dx} \left[ (1-x^2)  \frac{dP_l}{dx} \right] + l(l+1)  P_l(x) \right\rbrace dx= 0.
+\end{equation}
+
+The first term integrates by parts to give
+\begin{equation}
+\int_{-1}^{1} \left\lbrace \frac{dP_{l'}}{dx}   \frac{dP_l}{dx} + l(l+1)  P_{l'}  P_l \right\rbrace dx= 0.
+\end{equation}
+
+Interchanging $l$ and $l'$ in this relation gives
+\begin{equation}
+\int_{-1}^{1} \left\lbrace \frac{dP_{l}}{dx}   \frac{dP_{l'}}{dx} + l'(l'+1)  P_{l}  P_{l'} \right\rbrace dx= 0,
+\end{equation}
+and substracting these two relations gives the result
+\begin{equation}
+\int_{-1}^{1} \left[ l(l+1) -  l'(l'+1)  \right] P_{l}  P_{l'}  dx= 0,
+\end{equation}
+or
+\begin{equation}
+\int_{-1}^{1} P_{l}  P_{l'}  dx= 0 \text{ for } l \neq l'. \label{eq:orthogonalityLegendre1}
+\end{equation}
+
+On the other hand, for $l=l'$ the integral may not be zero. In fact, integration in this case is done by using Rodriguez' formula,
+\begin{equation}
+N_l = \int_{-1}^{1} P_{l}  P_{l}  dx = \int_{-1}^{1} \left[ \frac{1}{2^l l!} \frac{d^l}{dx^l} (x^2 - 1)^l \frac{1}{2^l l!} \frac{d^l}{dx^l} (x^2 - 1)^l \right] dx
+\end{equation}
+\begin{equation}
+N_l  = \frac{1}{2^{2l} (l!)^2} \int_{-1}^{1} \left[ \frac{d^l}{dx^l} (x^2 - 1)^l  \frac{d^l}{dx^l} (x^2 - 1)^l \right] dx.
+\end{equation}
+
+Integration by parts $l$ times in the r.h.s gives 
+\begin{equation}
+N_l  = \frac{(-1)^l}{2^{2l} (l!)^2} \int_{-1}^{1} \left[(x^2 - 1)^l  \frac{d^{2l}}{dx^{2l}} (x^2 - 1)^l \right] dx.
+\end{equation}
+
+Now, the derivatives in the integrand gives for $l=1$
+
+\begin{eqnarray}
+\frac{d^2}{dx^2} (x^2 - 1) &=& \frac{d}{dx} \left[ 2 x \right] = 2 = 2! \,\, , 
+\end{eqnarray}
+for $l=2$,
+\begin{eqnarray}
+\frac{d^4}{dx^4} (x^2 - 1)^2 &=& \frac{d^3}{dx^3} \left[ 4 x(x^2-1) \right]  =  \frac{d^2}{dx^2} \left[ 4 (x^2-1)+ 8 x^2 \right] \notag \\
+&=&  \frac{d}{dx} \left[ 8 x+ 16 x \right] =24 = 4! \,\, ,
+\end{eqnarray}
+for $l=3$,
+\begin{eqnarray}
+\frac{d^6}{dx^6} (x^2 - 1)^3 &=& \frac{d^5}{dx^5} \left[ 6 x(x^2-1)^2 \right]  =  \frac{d^4}{dx^4} \left[ 6 (x^2-1)^2 + 24 x^2(x^2-1) \right] \notag \\
+&=&  \frac{d^3}{dx^3} \left[ 24x (x^2-1) + 48 x(x^2-1) + 48 x^3\right] \notag \\
+&=&  \frac{d^2}{dx^2} \left[ 24 (x^2-1) +48x^2 + 48 (x^2-1) + 96 x^2 + 144 x^2\right]\notag \\
+&=&  \frac{d}{dx} \left[ 48 x +96x + 96 x+ 192 x + 288 x\right]\notag \\
+&=&  48 +96 + 96 + 192  + 288 = 720 = 6!\notag \\
+\end{eqnarray}
+or in general,
+\begin{equation}
+\frac{d^{2l}}{dx^{2l}} (x^2 -1)^l = (2l)! \,\, .
+\end{equation}
+
+Thus, the integral becomes
+\begin{equation}
+N_l  = \frac{(-1)^l (2l)!}{2^{2l} (l!)^2} \int_{-1}^{1} (x^2 - 1)^l  dx
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l)!}{2^{2l} (l!)^2} \int_{-1}^{1} ( 1 - x^2 )^l dx.
+\end{equation}
+
+The integrand in this expression is
+\begin{eqnarray}
+( 1 - x^2 )^l  &=& ( 1 - x^2 )( 1 - x^2 )^{l-1} = ( 1 - x^2 )^{l-1} - x^2 ( 1 - x^2 )^{l-1} \notag \\
+ &=& ( 1 - x^2 )^{l-1}  + \frac{x}{2l} \frac{d}{dx} ( 1 - x^2 )^{l} .
+\end{eqnarray}
+
+Replacing in the integral,
+\begin{equation}
+N_l  = \frac{(2l)!}{2^{2l} (l!)^2} \int_{-1}^{1} \left[ ( 1 - x^2 )^{l-1}  + \frac{x}{2l} \frac{d}{dx} ( 1 - x^2 )^{l}  \right] dx
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l)!}{2^{2l} (l!)^2} \int_{-1}^{1} ( 1 - x^2 )^{l-1} dx  + \frac{(2l)!}{2^{2l} (l!)^2} \int_{-1}^{1}  \left[  \frac{x}{2l} \frac{d}{dx} ( 1 - x^2 )^{l}  \right] dx
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l)!}{2^{2l} (l!)^2} \frac{2^{2(l-1)} ((l-1)!)^2}{(2(l-1))!} N_{l-1}  + \frac{(2l)!}{2^{2l} (l!)^2} \int_{-1}^{1}   \frac{x}{2l} d\left[( 1 - x^2 )^{l}  \right] 
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l)!}{ l^2} \frac{2^{-2} }{(2l-2)!} N_{l-1}  + \frac{(2l-1)!}{2^{2l} (l!)^2} \int_{-1}^{1}  xd\left[( 1 - x^2 )^{l}  \right] 
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l)(2l-1)}{ l^2} \frac{2^{-2} }{(2l-2)!} N_{l-1}  + \frac{(2l-1)!}{2^{2l} (l!)^2} \int_{-1}^{1}  xd\left[( 1 - x^2 )^{l}  \right] 
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l)(2l-1)(2l-2)!}{ l^2} \frac{2^{-2} }{(2l-2)!} N_{l-1}  + \frac{(2l-1)!}{2^{2l} (l!)^2} \int_{-1}^{1}  xd\left[( 1 - x^2 )^{l}  \right] 
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l-1)}{2 l} N_{l-1}  + \frac{(2l-1)!}{2^{2l} (l!)^2} \int_{-1}^{1}  xd\left[( 1 - x^2 )^{l}  \right] .
+\end{equation}
+
+The integral in the last term can be done by parts,
+ \begin{eqnarray}
+ \int_{-1}^{1}  xd\left[( 1 - x^2 )^{l}  \right] &=& \left[ x( 1 - x^2 )^{l} \right]_{-1}^1 - \int_{-1}^{1}  ( 1 - x^2 )^{l}  dx \notag \\
+ &=& - \frac{2^{2l} (l!)^2}{(2l)!} N_l,
+ \end{eqnarray}
+ and therefore
+\begin{equation}
+N_l  = \frac{(2l-1)}{2 l} N_{l-1}  -  \frac{(2l-1)!}{2^{2l} (l!)^2} \frac{2^{2l} (l!)^2}{(2l)!} N_l 
+\end{equation}
+\begin{equation}
+N_l  = \frac{(2l-1)}{2 l} N_{l-1}  -  \frac{1}{2l} N_l 
+\end{equation}
+from which
+\begin{equation}
+(2l+1)N_l  = (2l-1) N_{l-1} .
+\end{equation}
+
+Note that for $l=0$ the polynomial is $P_0(x) = 1$ and therefore $N_0 = 2$. Thus, the recursion relation above gives
+\begin{eqnarray}
+N_1 &=& \frac{1}{2(1)+1} N_0\\
+N_2 &=& \frac{3}{2(2)+1} N_1=\frac{3}{2(2)+1} \frac{1}{2(1)+1} N_0 = \frac{1}{2(2)+1} N_0 \\
+N_3 &=& \frac{5}{2(3)+1} N_2= \frac{5}{2(3)+1}  \frac{1}{2(2)+1} N_0 = \frac{1}{2(3)+1}  N_0\\
+N_4 &=& \frac{7}{2(4)+1} N_3= \frac{7}{2(4)+1}  \frac{1}{2(3)+1}  N_0 = \frac{1}{2(4)+1}  N_0\\
+\cdots & & \\
+N_l &=&  \frac{1}{2l+1}  N_0 = \frac{2}{2l+1}.
+\end{eqnarray}
+This result, together with equation (\ref{eq:orthogonalityLegendre1}) may be summarized in one relation,
+\begin{equation}
+\int_{-1}^{1} P_{l}  P_{l'}  dx = \frac{2}{2l+1} \delta_{l'l}, 
+\end{equation}
+representing the orthonormality of Legendre polynomials.\\
+
+\subsubsection{Expansion of a Function in Legendre Polynomials}
+Given any function $f(x)$ defined in the interval $-1 \le x \le 1$ can be expanded in terms of the Legendre polynomials in the form
+\begin{equation}
+f(x) = \sum_{l=0}^\infty A_l P_l (x)
+\end{equation} 
+where the coefficients are given by
+\begin{equation}
+A_l = \frac{2l+1}{2} \int_{-1} ^1 f(x) P_l(x) dx.
+\end{equation}
+\textbf{Example}\\
+Consider the function
+\begin{equation}
+f(x) = 
+\begin{cases}
++1 \text{ for } x>0 \\
+-1 \text{ for } x<0
+\end{cases} .
+\end{equation}
+
+The expansion of this function in Legendre polynomials will have coefficients
+ \begin{equation}
+ A_l = \frac{2l+1}{2} \left[ \int_0^1 P_l(x) dx - \int_{-1}^0 P_l(x) dx \right]. \label{eq:CoeffcientsExample1}
+ \end{equation}
+ If $l$ is even, the polynomial $P_l(x)$ is even and therefore the integrals cancel out. If $l$ is odd, the polynomial is odd and the integrals sum to give
+  \begin{equation}
+ A_l = (2l+1) \int_0^1 P_l(x) dx  \text{ for } l \text{ odd}. 
+ \end{equation}
+ Using Rodrigues' formula, this integral is evaluated to give
+\begin{equation}
+A_l = \left( -\frac{1}{2}\right)^{(l-1)/2} \frac{(2l+1)(l-2)!!}{2\left( \frac{l+1}{2}\right)!}.  \label{eq:CoefficientsExample2}
+\end{equation}
+
+Hence the first coefficients in this series gives
+\begin{equation}
+f(x) = \frac{3}{2} P_1 (x) - \frac{7}{8} P_3 (x) + \frac{11}{16} P_5 (x) - ... \label{eq:CoefficientsExample3}
+\end{equation}
+\subsubsection{Some Recurrence Formulas}
+
+\begin{equation}
+\frac{dP_{l+1}}{dx} - \frac{dP_{l-1}}{dx} - (2l+1) P_l = 0
+\end{equation}
+\begin{equation}
+(l+1)P_{l+1} - (2l+1)xP_l + lP_{l-1} = 0
+\end{equation}
+\begin{equation}
+\frac{dP_{l+1}}{dx} - x\frac{dP_{l}}{dx} - (l+1) P_l = 0
+\end{equation}
+\begin{equation}
+(x^2 - 1) \frac{dP_l}{dx} - lxP_l + lP_{l-1} = 0
+\end{equation}
+
+\subsection{Azimuthal Problems with Boundary Conditions}
+The general solution of Laplace equation in spherical coordinates with azimuthal symmetry $(m=0)$ is given by
+\begin{equation}
+\Phi (r,\theta) = \sum_{l=0}^\infty \left[ A_l r^l + B_l r^{-(l+1)} \right] P_l (\cos \theta),
+\end{equation}
+where the coefficients $A_l$ and $B_l$ will be determined from boundary conditions.\\
+\textbf{Example. Sphere with hemispheres at different potentials.}\\
+Consider that we want to find the electrostatic potential in the interior of a sphere of radius $R$ and that the boundary condition states that $\Phi (R,\theta) = V(\theta)$. Note that if there are no charges at the origin $(r=0)$, the potential must be finite and thus $B_l=0$ for all $l$. Hence
+\begin{equation}
+\Phi (r,\theta) = \sum_{l=0}^\infty  A_l r^l  P_l (\cos \theta),
+\end{equation}
+and evaluating at the surface of the sphere, the boundary condition gives
+\begin{equation}
+\Phi (R,\theta) = \sum_{l=0}^\infty  A_l R^l  P_l (\cos \theta),= V(\theta).
+\end{equation}
+
+This equation can be seen as an expansion of the function $V(\theta)$ in Legendre series and consequently, the coefficients $A_l$ are given by 
+\begin{equation}
+A_l = \frac{2l+1}{2R^l} \int_0^\pi V(\theta) P_l (\cos \theta) \sin \theta d\theta.
+\end{equation}
+
+Consider now that $V(\theta)$ is given by the function
+\begin{equation}
+ V(\theta) = 
+ \begin{cases}
+ +V_0 \text{ for } 0\leq \theta < \frac{\pi}{2}\\
+ -V_0 \text{ for } \frac{\pi}{2}< \theta \leq \pi
+ \end{cases},
+ \end{equation} 
+ as in a previous example. Then 
+
+\begin{equation}
+A_l = \frac{2l+1}{2R^l} \left[ \int_0^\frac{\pi}{2} V_0 P_l (\cos \theta) \sin \theta d\theta  - \int_\frac{\pi}{2} ^\pi V_0 P_l (\cos \theta) \sin \theta d\theta \right]
+\end{equation}
+or under a change of variable,
+\begin{equation}
+A_l = \frac{2l+1}{2R^l} \left[ \int_0^1 V_0 P_l (x)dx  - \int_{-1} ^0 V_0 P_l (x) dx \right].
+\end{equation}
+
+This equation is equal to (\ref{eq:CoeffcientsExample1}) and therefore using the result (\ref{eq:CoefficientsExample2}) for the integral we obtain
+\begin{equation}
+A_l = \left( -\frac{1}{2}\right)^{(l-1)/2} \frac{(2l+1)(l-2)!!}{2R^l \left( \frac{l+1}{2}\right)!}V_0 \text{ with } l \text{ odd}.
+\end{equation}
+
+Hence, the electrostatic potential is given by the series
+\begin{equation}
+\Phi (r, \theta) = V_0 \left[ \frac{3}{2} \frac{r}{R} P_1 (\cos \theta ) - \frac{7}{8}  \left( \frac{r}{R} \right)^3 P_3 (\cos \theta) + \frac{11}{6} \left( \frac{r}{R} \right)^5 P_5 (\cos \theta ) ...  \right]
+\end{equation}
+
+Finally, it is important to note that  the potential outside the sphere is obtained from this equation by replacing the factor $\left( \frac{r}{R} \right)^l$ by $\left( \frac{R}{r} \right)^{l+1}$.
+\bigskip
+
+\textbf{Example. Expansion of the potential due to a point charge.}\\
+In this example we will consider the function 
+\begin{equation}
+f(\textbf{r}, \textbf{r}')= \frac{1}{\left| \textbf{r} - \textbf{r}' \right|}. 
+\end{equation}
+In order to exploit the azimuthal symmetry described above, we will rotate the axes so that $\textbf{r}'$ lies along the $z$ axis. Hence, the angle $\theta$ will correspond to the angle between $\textbf{r}$ and $\textbf{r}'$ and thus we will name it $\gamma$. Due to the azimuthal symmetry, we expand in terms of Legendre polynomials as
+\begin{equation}
+f(\textbf{r}) =  \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} = \sum_{l=0} ^\infty \left[ A_l r^l + B_l r^{-(l+1)} \right] P_l (\cos \gamma).
+ \end{equation} 
+
+If the point  $\textbf{r}$ in on the $z$ axis, we have $\gamma = 0$ and then, this expansion will reduce to 
+\begin{equation}
+  \frac{1}{\left| \textbf{r} - \textbf{r}' \right|} = \sum_{l=0} ^\infty \left[ A_l r^l + B_l r^{-(l+1)} \right],
+ \end{equation} 
+and 
+\begin{equation}
+\frac{1}{\left| \textbf{r} - \textbf{r}' \right|}  = \frac{1}{\left( r^2 +r'^2 - 2rr' \cos \gamma \right)^{1/2}} = \frac{1}{\left( r^2 +r'^2 - 2rr' \right)^{1/2}}  = \frac{1}{\left| r - r' \right|} .
+\end{equation}
+
+Then we have the expansion as
+\begin{equation}
+  \frac{1}{\left| r - r' \right|} = \sum_{l=0} ^\infty \left[ A_l r^l + B_l r^{-(l+1)} \right],
+ \end{equation}
+ where the coefficients $A_l$ and $B_l$ may be functions of $r'$.\\
+ 
+If $r<r'$, this expansion needs to be finite at $r=0$ and therefore we $B_l=0$. The resulting expression is
+\begin{equation}
+  \frac{1}{\left| r - r' \right|} =   \frac{1}{( r' - r )} = \sum_{l=0} ^\infty A_l r^l 
+\end{equation} 
+\begin{equation}
+  \frac{1}{r'\left( 1 - \frac{r}{r'} \right)} = \sum_{l=0} ^\infty A_l r^l .
+ \end{equation} 
+ 
+Using the convention $r=r_<$ and $r'=r_>$, this expression becomes 
+  \begin{equation}
+  \frac{1}{r_>\left( 1 - \frac{r_<}{r_>} \right)} = \sum_{l=0} ^\infty A_l r^l _<. \label{eq:rgreaterrprime}
+ \end{equation} 
+ 
+ On the other hand, for points with  $r>r'$, this expansion needs to be finite when $r\rightarrow \infty$ and therefore we $A_l=0$. The resulting equation is now
+\begin{equation}
+  \frac{1}{\left| r - r' \right|} =   \frac{1}{( r - r' )} = \sum_{l=0} ^\infty B_l r^{-(l+1)}
+ \end{equation} 
+ \begin{equation}
+  \frac{1}{r\left( 1 - \frac{r'}{r} \right)} = \sum_{l=0} ^\infty B_l r^{-(l+1)} .
+ \end{equation} 
+ 
+Using the convention $r'=r_<$ and $r=r_>$, this expression becomes 
+\begin{equation}
+\frac{1}{r_>\left( 1 - \frac{r_<}{r_>} \right)} = \sum_{l=0} ^\infty \frac{B_l}{ r^{(l+1)}_> } .\label{eq:rprimegreaterr}
+\end{equation} 
+ 
+Results (\ref{eq:rgreaterrprime}) and (\ref{eq:rprimegreaterr}) can be summarized into one equation
+\begin{equation}
+\frac{1}{r_>\left( 1 - \frac{r_<}{r_>} \right)} = \sum_{l=0} ^\infty C_l \frac{r^l _<}{ r^{(l+1)}_> } , \label{eq:generalExpansion}
+\end{equation}    
+provided that 
+\begin{equation}
+C_l = 
+\begin{cases}
+ A_l r^{(l+1)}_>  &\text{ when } r<r'\\
+\frac{B_l }{r^l _<} &\text{ when } r>r'
+\end{cases} .
+\end{equation}
+ 
+The expansion of both sides of equation (\ref{eq:generalExpansion}) gives
+ \begin{equation}
+ \frac{1}{r_>\left( 1 - \frac{r_<}{r_>} \right)} = \frac{1}{r_>}\left( 1 - \frac{r_<}{r_>} \right)^{-1} =   \frac{1}{r_>}\left( 1 + \frac{r_<}{r_>} + \frac{r_<^2}{r_>^2} + ... \right)
+ \end{equation}
+ and 
+ \begin{equation}
+ \sum_{l=0} ^\infty C_l \frac{r^l _<}{ r^{(l+1)}_> } = \frac{1}{r_>} \sum_{l=0} ^\infty C_l \frac{r^l _<}{ r^{(l)}_> } = \frac{1}{r_>}\left( C_0 + C_1 \frac{r_<}{r_>} + C_2 \frac{r_<^2}{r_>^2} + ... \right)
+ \end{equation}
+ 
+ Comparison of both expansions let us identify the coefficients $C_l = 1$ and therefore we obtain 
+ \begin{equation}
+  \frac{1}{\left| r - r' \right|}  = \sum_{l=0} ^\infty \frac{r^l _<}{ r^{(l+1)}_> }.
+\end{equation}
+
+For points $\textbf{r}$ off the $z$ axis it is only necessary to multiply each term by the corresponding Legendre polynomial $P_l(\cos \theta)$, i.e.
+\begin{equation}
+\frac{1}{\left| r - r' \right|} = \sum_{l=0} ^\infty \frac{r^l _<}{ r^{(l+1)}_> } P_l(\cos \theta).
 \end{equation}

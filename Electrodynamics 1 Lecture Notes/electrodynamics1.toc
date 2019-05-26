@@ -1,0 +1,50 @@
+\contentsline {chapter}{\numberline {1}Maxwell Equations}{5}
+\contentsline {section}{\numberline {1.1}Lorentz Force}{5}
+\contentsline {subsection}{\numberline {1.1.1}Electric Charge}{5}
+\contentsline {subsection}{\numberline {1.1.2}Dirac Delta Function}{5}
+\contentsline {subsection}{\numberline {1.1.3}Electric Current}{6}
+\contentsline {subsection}{\numberline {1.1.4}Electric Charge Conservation and the Equation of Continuity}{7}
+\contentsline {subsection}{\numberline {1.1.5}Electric and Magnetic Fields}{8}
+\contentsline {section}{\numberline {1.2}Maxwell Equations}{8}
+\contentsline {section}{\numberline {1.3}Maxwell Equations in Matter}{9}
+\contentsline {chapter}{\numberline {2}Electrostatics}{11}
+\contentsline {section}{\numberline {2.1}Helmholtz Theorem}{11}
+\contentsline {section}{\numberline {2.2}Scalar Potential}{12}
+\contentsline {section}{\numberline {2.3}Poisson and Laplace Equations}{12}
+\contentsline {section}{\numberline {2.4}Coulomb Field}{12}
+\contentsline {section}{\numberline {2.5}Potential Energy}{14}
+\contentsline {section}{\numberline {2.6}Discontinuities in the Electric Field and Potential}{15}
+\contentsline {section}{\numberline {2.7}Dipole-Layer Distribution}{15}
+\contentsline {section}{\numberline {2.8}Energy Density and Capacitance}{16}
+\contentsline {subsection}{\numberline {2.8.1}Capacitance}{18}
+\contentsline {section}{\numberline {2.9}Green's Theorems}{18}
+\contentsline {section}{\numberline {2.10}Dirichlet and Neumann Boundary Conditions}{19}
+\contentsline {section}{\numberline {2.11}Formal Solution of the Poisson Equation with Boundary Conditions. Green Functions}{21}
+\contentsline {section}{\numberline {2.12}Variational Approach to Poisson Equation and Boundary Conditions}{22}
+\contentsline {chapter}{\numberline {3}Boundary Value Problems in Electrostatics}{25}
+\contentsline {section}{\numberline {3.1} Method of Images}{25}
+\contentsline {subsection}{\numberline {3.1.1} Point Charge in the Presence of a Grounded Infinite Conductor Plane}{25}
+\contentsline {subsection}{\numberline {3.1.2} Finite Line of Charge}{26}
+\contentsline {subsection}{\numberline {3.1.3} Point Charge in the Presence of a Grounded Conducting Sphere}{26}
+\contentsline {subsection}{\numberline {3.1.4} Point Charge in the Presence of a Charged, Insulated, Conducting Sphere}{28}
+\contentsline {subsection}{\numberline {3.1.5}Point Charge in the Presence of a Conducting Sphere at Fixed Potential}{30}
+\contentsline {subsection}{\numberline {3.1.6}Conducting Sphere ina Uniform Electric Field}{30}
+\contentsline {section}{\numberline {3.2}Green Function for the Sphere}{32}
+\contentsline {subsection}{\numberline {3.2.1} Conducting Sphere with Hemispheres at Different Potentials}{33}
+\contentsline {subsubsection}{Integration}{36}
+\contentsline {section}{\numberline {3.3}Orthogonal Functions and Expansions}{38}
+\contentsline {subsection}{\numberline {3.3.1}Fourier Series}{39}
+\contentsline {subsection}{\numberline {3.3.2}Fourier Integral}{40}
+\contentsline {section}{\numberline {3.4}Laplace Equation in Rectangular Coordinates}{40}
+\contentsline {subsection}{\numberline {3.4.1}Rectangular Box Boundary Conditions}{41}
+\contentsline {subsection}{\numberline {3.4.2}2-Dimensional Potential Problem}{42}
+\contentsline {subsection}{\numberline {3.4.3}2-Dimensional Corners}{43}
+\contentsline {subsubsection}{Examples}{44}
+\contentsline {chapter}{\numberline {4}Boundary Value Problems in Electrostatics II}{47}
+\contentsline {section}{\numberline {4.1}Laplace Equation in Spherical Coordinates}{47}
+\contentsline {section}{\numberline {4.2}Legendre Equation with Azimuthal Symmetry}{48}
+\contentsline {subsection}{\numberline {4.2.1}$m=0$ and the Legendre Polynomials}{48}
+\contentsline {subsubsection}{Orthogonality of the Legendre Polynomials}{52}
+\contentsline {subsubsection}{Expansion of a Function in Legendre Polynomials}{55}
+\contentsline {subsubsection}{Some Recurrence Formulas}{56}
+\contentsline {subsection}{\numberline {4.2.2}Azimuthal Problems with Boundary Conditions}{56}
